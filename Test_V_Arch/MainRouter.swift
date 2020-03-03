@@ -8,11 +8,15 @@
 
 import Foundation
 
-final class MainRouter: MainRouterProtocol, ShowActions {
+final class MainRouter: MainRouterProtocol {
   weak var context: MainViewController!
   
   func routeToDetails(callbacks: DetailsCallbacks) {
     let presentable = DetailsAssembly().assemble(callbacks: callbacks)
-    present(presentable, animated: true)
+    context.present(presentable: presentable, animated: true)
+    
+//    presentable.onDismiss = { presentable, completion in
+//      presentable.dismissPresentable(animated: true, completion: completion)
+//    }
   }
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 protocol RouteActions: ShowActions, DismissActions {}
 
 protocol Contextable: AnyObject {
@@ -40,6 +40,12 @@ extension ShowActions where ContextType: UIViewController {
 
 extension DismissActions where ContextType: UIViewController  {
   func dismiss(animated: Bool, completion: (() -> Void)?) {
-    context.dismiss(animated: true, completion: completion)
+    let navigationController = (context as? UINavigationController) ?? context.navigationController
+    
+    let popVC = navigationController?.popViewController(animated: animated)
+    if popVC == nil {
+      context.dismiss(animated: true, completion: completion)
+    }
   }
 }
+*/

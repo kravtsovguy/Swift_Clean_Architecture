@@ -8,14 +8,13 @@
 
 import UIKit
 
-protocol DetailsView: View {
+protocol DetailsView: View, Dismissable {
   var callbacks: DetailsCallbacks! { get set }
-  var router: DetailsRouterProtocol! { get set }
 }
 
 final class DetailsViewController: UIViewController, DetailsView {
+  var onDismiss: ((DetailsViewController, (() -> Void)?) -> Void)?
   var callbacks: DetailsCallbacks!
-  var router: DetailsRouterProtocol!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,13 +40,13 @@ final class DetailsViewController: UIViewController, DetailsView {
   }
   
   @objc private func acceptAction() {
-    router.dismiss {
+    onDismiss?(self) {
       self.callbacks.onAccept()
     }
   }
   
   @objc private func declineAction() {
-    router.dismiss {
+    onDismiss?(self) {
       self.callbacks.onDecline()
     }
   }

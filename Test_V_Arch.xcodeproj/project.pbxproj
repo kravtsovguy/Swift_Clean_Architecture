@@ -29,7 +29,7 @@
 		9CED9DDC240DA75D0087315A /* TextFieldInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DDB240DA75D0087315A /* TextFieldInteractor.swift */; };
 		9CED9DDE240DA76C0087315A /* TextFieldlProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DDD240DA76C0087315A /* TextFieldlProtocols.swift */; };
 		9CED9DE0240DA81F0087315A /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DDF240DA81F0087315A /* TextFieldView.swift */; };
-		9CED9DE7240E6E640087315A /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DE6240E6E640087315A /* DetailsRouter.swift */; };
+		9CED9DE9240E856F0087315A /* Dismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DE8240E856F0087315A /* Dismissable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,7 @@
 		9CED9DDB240DA75D0087315A /* TextFieldInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInteractor.swift; sourceTree = "<group>"; };
 		9CED9DDD240DA76C0087315A /* TextFieldlProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldlProtocols.swift; sourceTree = "<group>"; };
 		9CED9DDF240DA81F0087315A /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		9CED9DE6240E6E640087315A /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		9CED9DE8240E856F0087315A /* Dismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dismissable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,7 @@
 			children = (
 				9CED9DC9240D43320087315A /* RouteActions.swift */,
 				9CED9DC4240D344F0087315A /* Presentable.swift */,
+				9CED9DE8240E856F0087315A /* Dismissable.swift */,
 				9CED9DBA240D27CC0087315A /* Assembly.swift */,
 				9CED9DC0240D28BD0087315A /* Router.swift */,
 				9CED9DBC240D281C0087315A /* Interactor.swift */,
@@ -133,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				9CED9DCC240D46110087315A /* DetailsAssembly.swift */,
-				9CED9DE6240E6E640087315A /* DetailsRouter.swift */,
 				9CED9DCE240D46280087315A /* DetailsViewController.swift */,
 			);
 			name = Details;
@@ -228,9 +228,9 @@
 				9CED9DB6240D22500087315A /* MainPresenter.swift in Sources */,
 				9CED9DBD240D281C0087315A /* Interactor.swift in Sources */,
 				9CED9DAC240D1E0F0087315A /* MainAssembly.swift in Sources */,
+				9CED9DE9240E856F0087315A /* Dismissable.swift in Sources */,
 				9CED9DC3240D29820087315A /* MainProtocols.swift in Sources */,
 				9CED9DB9240D24FF0087315A /* View.swift in Sources */,
-				9CED9DE7240E6E640087315A /* DetailsRouter.swift in Sources */,
 				9CED9DDC240DA75D0087315A /* TextFieldInteractor.swift in Sources */,
 				9CED9DC1240D28BD0087315A /* Router.swift in Sources */,
 				9CED9DDE240DA76C0087315A /* TextFieldlProtocols.swift in Sources */,
