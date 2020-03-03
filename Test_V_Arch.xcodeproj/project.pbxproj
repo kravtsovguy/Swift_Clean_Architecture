@@ -22,7 +22,6 @@
 		9CED9DC1240D28BD0087315A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DC0240D28BD0087315A /* Router.swift */; };
 		9CED9DC3240D29820087315A /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DC2240D29820087315A /* MainProtocols.swift */; };
 		9CED9DC5240D344F0087315A /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DC4240D344F0087315A /* Presentable.swift */; };
-		9CED9DCA240D43320087315A /* RouteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DC9240D43320087315A /* RouteActions.swift */; };
 		9CED9DCD240D46110087315A /* DetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DCC240D46110087315A /* DetailsAssembly.swift */; };
 		9CED9DCF240D46280087315A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DCE240D46280087315A /* DetailsViewController.swift */; };
 		9CED9DD8240DA6FF0087315A /* TextFieldAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DD7240DA6FF0087315A /* TextFieldAssembly.swift */; };
@@ -50,7 +49,6 @@
 		9CED9DC0240D28BD0087315A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9CED9DC2240D29820087315A /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
 		9CED9DC4240D344F0087315A /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		9CED9DC9240D43320087315A /* RouteActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteActions.swift; sourceTree = "<group>"; };
 		9CED9DCC240D46110087315A /* DetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAssembly.swift; sourceTree = "<group>"; };
 		9CED9DCE240D46280087315A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9CED9DD7240DA6FF0087315A /* TextFieldAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAssembly.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		9CED9DB7240D24EC0087315A /* Arch */ = {
 			isa = PBXGroup;
 			children = (
-				9CED9DC9240D43320087315A /* RouteActions.swift */,
 				9CED9DC4240D344F0087315A /* Presentable.swift */,
 				9CED9DE8240E856F0087315A /* Dismissable.swift */,
 				9CED9DBA240D27CC0087315A /* Assembly.swift */,
@@ -237,7 +234,6 @@
 				9CED9DC5240D344F0087315A /* Presentable.swift in Sources */,
 				9CED9DBF240D28B20087315A /* Presenter.swift in Sources */,
 				9CED9DD8240DA6FF0087315A /* TextFieldAssembly.swift in Sources */,
-				9CED9DCA240D43320087315A /* RouteActions.swift in Sources */,
 				9CED9DCF240D46280087315A /* DetailsViewController.swift in Sources */,
 				9CED9DB2240D216D0087315A /* MainInteractor.swift in Sources */,
 				9CED9DAE240D1FD80087315A /* MainViewController.swift in Sources */,
