@@ -12,7 +12,6 @@ protocol MainRouterProtocol: Router {
   var context: MainViewController! { get }
   
   func routeToDetails(callbacks: DetailsCallbacks?)
-  
   func routeToSolid()
 }
 

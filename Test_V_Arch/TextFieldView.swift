@@ -13,7 +13,6 @@ final class TextField: UITextField, TextFieldViewProtocol {
   
   convenience init() {
     self.init(frame: .zero)
-//    delegate = self
     addTarget(self, action: #selector(textChanged), for: .editingChanged)
   }
   

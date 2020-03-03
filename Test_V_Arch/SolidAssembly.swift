@@ -10,11 +10,7 @@ import Foundation
 
 final class SolidAssembly: Assembly {
   private(set) weak var router: SolidRouter?
-  
-//  private(set) lazy var routerClosure: () -> SolidRouter? = { [weak self] in
-//    self?.router
-//  }
-//
+
   func assemble(title: String) -> SolidViewController {
     let viewController = SolidViewController()
     let interactor = SolidInteractor(title: title)

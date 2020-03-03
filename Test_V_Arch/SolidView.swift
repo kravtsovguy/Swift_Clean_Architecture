@@ -13,7 +13,6 @@ class SolidViewController: UIViewController, SolidViewProtocol {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     view.backgroundColor = .red
   }
   
