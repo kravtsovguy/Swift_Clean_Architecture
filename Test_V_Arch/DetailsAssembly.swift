@@ -13,8 +13,8 @@ struct DetailsCallbacks {
   let onDecline: (() -> Void)
 }
 
-final class DetailsAssembly {  
-  func assemble(callbacks: DetailsCallbacks) -> DetailsViewController {
+final class DetailsAssembly: BaseAssembly {  
+  func assemble(callbacks: DetailsCallbacks?) -> DetailsViewController {
     let viewController = DetailsViewController()
     viewController.callbacks = callbacks
     

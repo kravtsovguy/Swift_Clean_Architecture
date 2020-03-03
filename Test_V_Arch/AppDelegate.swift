@@ -13,12 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   let mainAssembly = MainAssembly()
-  let solidDeeplink = Deeplink()
-  
-//  override init() {
-////    solidDeeplink = Deeplink(initialStep: MainStep(assembly: mainAssembly))
-//    super.init()
-//  }
+  let solidDeeplink = SolidDeeplink()
+  let modalDeeplink = ModalDeeplink()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -26,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.rootViewController = UINavigationController(rootViewController: mainAssembly.assemble())
     window?.makeKeyAndVisible()
     
-    solidDeeplink.run(assembly: mainAssembly)
+    DispatchQueue.main.async {
+//      self.modalDeeplink.run(router: self.mainAssembly.router)
+      self.solidDeeplink.run(router: self.mainAssembly.router)
+    }
     
     return true
   }

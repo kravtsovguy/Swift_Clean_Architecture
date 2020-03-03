@@ -14,7 +14,7 @@ final class MainRouter: MainRouterProtocol {
   let detailsAssembly = DetailsAssembly()
   let solidAssembly = SolidAssembly()
   
-  func routeToDetails(callbacks: DetailsCallbacks) {
+  func routeToDetails(callbacks: DetailsCallbacks?) {
     let presentable = detailsAssembly.assemble(callbacks: callbacks)
     context.present(presentable: presentable, animated: true)
   }

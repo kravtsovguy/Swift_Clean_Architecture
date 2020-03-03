@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Router: AnyObject {
-//  var viewController: UIViewController! { get }
+//  var context: Presentable! { get }
 }
