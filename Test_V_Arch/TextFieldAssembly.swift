@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct TextFieldCallbacks {
   let onValidate: (Bool) -> Void

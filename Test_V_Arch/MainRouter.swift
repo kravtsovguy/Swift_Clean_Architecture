@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 final class MainRouter: MainRouterProtocol, ShowActions {
   weak var context: MainViewController!
