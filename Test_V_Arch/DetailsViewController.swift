@@ -13,7 +13,6 @@ protocol DetailsView: View, Dismissable {
 }
 
 final class DetailsViewController: UIViewController, DetailsView {
-  var onDismiss: ((DetailsViewController, (() -> Void)?) -> Void)?
   var callbacks: DetailsCallbacks!
   
   override func viewDidLoad() {

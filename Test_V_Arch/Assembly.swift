@@ -9,5 +9,9 @@
 import Foundation
 
 protocol Assembly: AnyObject {
+  associatedtype  RouterType: Router
+  
+  var router: RouterType? { get }
+  
 //  func assemble() -> Presentable
 }

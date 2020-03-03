@@ -9,6 +9,12 @@
 import Foundation
 
 final class MainAssembly: Assembly {
+  private(set) weak var router: MainRouter?
+  
+//  private(set) lazy var routerClosure: () -> MainRouter? = { [weak self] in
+//    self?.router
+//  }
+//
   func assemble() -> MainViewController {
     let viewController = MainViewController()
     let router = MainRouter()
@@ -20,6 +26,8 @@ final class MainAssembly: Assembly {
     interactor.router = router
     interactor.presenter = presenter
     viewController.interactor = interactor
+    
+    self.router = router
     
     return viewController
   }

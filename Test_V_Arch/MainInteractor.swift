@@ -19,4 +19,8 @@ final class MainInteractor: MainInteractorProtocol {
       print("decline")
     }))
   }
+  
+  func testButtonTapped() {
+    router.routeToSolid()
+  }
 }

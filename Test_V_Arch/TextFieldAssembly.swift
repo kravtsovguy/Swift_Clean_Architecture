@@ -12,7 +12,7 @@ struct TextFieldCallbacks {
   let onValidate: (Bool) -> Void
 }
 
-final class TextFieldAssembly: Assembly {
+final class TextFieldAssembly {
   func assemble(callbacks: TextFieldCallbacks) -> TextField {
     let textField = TextField()
     let interactor = TextFieldInteractor()

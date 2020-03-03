@@ -12,6 +12,8 @@ protocol MainRouterProtocol: Router {
   var context: MainViewController! { get }
   
   func routeToDetails(callbacks: DetailsCallbacks)
+  
+  func routeToSolid()
 }
 
 protocol MainInteractorProtocol: Interactor {
@@ -19,6 +21,7 @@ protocol MainInteractorProtocol: Interactor {
   var presenter: MainPresenterProtocol! { get }
   
   func buttonTapped()
+  func testButtonTapped()
 }
 
 protocol MainPresenterProtocol: Presenter {

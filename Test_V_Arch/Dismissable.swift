@@ -7,9 +7,13 @@
 //
 
 import Foundation
-import UIKit
+import class UIKit.UIViewController
 
 protocol Dismissable: Presentable {
+  var onDismiss: ((_ presentable: Self, _ completion: (() -> Void)?) -> Void)? { get }
+}
+
+protocol CustomDismissable: Dismissable {
   var onDismiss: ((_ presentable: Self, _ completion: (() -> Void)?) -> Void)? { get set }
 }
 

@@ -14,6 +14,7 @@ final class MainViewController: UIViewController, MainViewProtocol {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = "Main"
     view.backgroundColor = .blue
     
     let button = UIButton(frame: CGRect(x: 100, y: 100, width: 300, height: 50))
@@ -21,9 +22,19 @@ final class MainViewController: UIViewController, MainViewProtocol {
     button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     
     view.addSubview(button)
+    
+    let testButton = UIButton(frame: CGRect(x: 100, y: 200, width: 300, height: 50))
+    testButton.setTitle("Solid", for: .normal)
+    testButton.addTarget(self, action: #selector(testButtonAction), for: .touchUpInside)
+    
+    view.addSubview(testButton)
   }
   
   @objc private func buttonAction() {
     interactor.buttonTapped()
+  }
+  
+  @objc private func testButtonAction() {
+    interactor.testButtonTapped()
   }
 }
