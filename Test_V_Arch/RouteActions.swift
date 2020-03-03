@@ -8,19 +8,21 @@
 
 import UIKit
 
-protocol RouteActions: AnyObject {
+protocol RouteActions: ShowActions, DismissActions {}
+
+protocol Contextable: AnyObject {
   associatedtype ContextType
   var context: ContextType! { get }
 }
 
-protocol ShowActions: RouteActions {
+protocol ShowActions: Contextable {
   typealias Presentable = UIViewController
   
   func present(_ presentable: Presentable, animated: Bool)
   func push(_ presentable: Presentable, animated: Bool)
 }
 
-protocol DismissActions: RouteActions {
+protocol DismissActions: Contextable {
   func dismiss(animated: Bool, completion: (() -> Void)?)
 }
 
