@@ -1,5 +1,5 @@
 //
-//  SolidDeeplink.swift
+//  PushDeeplink.swift
 //  Test_V_Arch
 //
 //  Created by Matvey Kravtsov on 04.03.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SolidDeeplink: Deeplink {
+final class PushDeeplink: Deeplink {
   func run(router: MainRouter?) {
     forceWithoutAnimation = true
     defer { forceWithoutAnimation = false }

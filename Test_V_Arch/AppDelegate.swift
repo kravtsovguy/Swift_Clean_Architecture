@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   let mainAssembly = MainAssembly()
-  let solidDeeplink = SolidDeeplink()
+  let solidDeeplink = PushDeeplink()
   let modalDeeplink = ModalDeeplink()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

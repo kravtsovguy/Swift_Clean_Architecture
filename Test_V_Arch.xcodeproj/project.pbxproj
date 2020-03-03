@@ -35,7 +35,7 @@
 		9CED9DF2240EA5620087315A /* SolidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF1240EA5620087315A /* SolidView.swift */; };
 		9CED9DF4240EAFD90087315A /* SolidProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF3240EAFD90087315A /* SolidProtocols.swift */; };
 		9CED9DF6240EAFE20087315A /* SolidInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF5240EAFE20087315A /* SolidInteractor.swift */; };
-		9CED9DF9240F10380087315A /* SolidDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF8240F10380087315A /* SolidDeeplink.swift */; };
+		9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF8240F10380087315A /* PushDeeplink.swift */; };
 		9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DFA240F10950087315A /* ModalDeeplink.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,7 @@
 		9CED9DF1240EA5620087315A /* SolidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidView.swift; sourceTree = "<group>"; };
 		9CED9DF3240EAFD90087315A /* SolidProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidProtocols.swift; sourceTree = "<group>"; };
 		9CED9DF5240EAFE20087315A /* SolidInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidInteractor.swift; sourceTree = "<group>"; };
-		9CED9DF8240F10380087315A /* SolidDeeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidDeeplink.swift; sourceTree = "<group>"; };
+		9CED9DF8240F10380087315A /* PushDeeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeeplink.swift; sourceTree = "<group>"; };
 		9CED9DFA240F10950087315A /* ModalDeeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDeeplink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,7 @@
 		9CED9DF7240F10250087315A /* Deeplinks */ = {
 			isa = PBXGroup;
 			children = (
-				9CED9DF8240F10380087315A /* SolidDeeplink.swift */,
+				9CED9DF8240F10380087315A /* PushDeeplink.swift */,
 				9CED9DFA240F10950087315A /* ModalDeeplink.swift */,
 			);
 			name = Deeplinks;
@@ -263,7 +263,7 @@
 				9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */,
 				9CED9DE0240DA81F0087315A /* TextFieldView.swift in Sources */,
 				9CED9DCD240D46110087315A /* DetailsAssembly.swift in Sources */,
-				9CED9DF9240F10380087315A /* SolidDeeplink.swift in Sources */,
+				9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */,
 				9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */,
 				9CED9DB6240D22500087315A /* MainPresenter.swift in Sources */,
 				9CED9DBD240D281C0087315A /* Interactor.swift in Sources */,
