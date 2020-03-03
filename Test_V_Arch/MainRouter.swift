@@ -14,9 +14,5 @@ final class MainRouter: MainRouterProtocol {
   func routeToDetails(callbacks: DetailsCallbacks) {
     let presentable = DetailsAssembly().assemble(callbacks: callbacks)
     context.present(presentable: presentable, animated: true)
-    
-//    presentable.onDismiss = { presentable, completion in
-//      presentable.dismissPresentable(animated: true, completion: completion)
-//    }
   }
 }
