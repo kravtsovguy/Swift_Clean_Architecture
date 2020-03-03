@@ -14,9 +14,13 @@ struct DetailsCallbacks {
 }
 
 final class DetailsAssembly: Assembly {
-  func assemble(callbacks: DetailsCallbacks) -> DetailsView {
+  func assemble(callbacks: DetailsCallbacks) -> DetailsViewController {
     let viewController = DetailsViewController()
+    let router = DetailsRouter()
+    
     viewController.callbacks = callbacks
+    viewController.router = router
+    router.context = viewController
     
     return viewController
   }

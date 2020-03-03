@@ -10,23 +10,34 @@ import UIKit
 
 protocol RouteActions: AnyObject {
   associatedtype ContextType
-  
   var context: ContextType! { get }
+}
+
+protocol ShowActions: RouteActions {
+  typealias Presentable = UIViewController
   
   func present(_ presentable: Presentable, animated: Bool)
   func push(_ presentable: Presentable, animated: Bool)
 }
 
-extension RouteActions where ContextType: UIViewController  {
+protocol DismissActions: RouteActions {
+  func dismiss(animated: Bool, completion: (() -> Void)?)
+}
+
+extension ShowActions where ContextType: UIViewController {
   func present(_ presentable: Presentable, animated: Bool) {
-    guard let vc = presentable as? UIViewController else { return }
-    context.present(vc, animated: animated)
+    context.present(presentable, animated: animated)
   }
   
   func push(_ presentable: Presentable, animated: Bool) {
-    guard let vc = presentable as? UIViewController else { return }
     let navigationController = (context as? UINavigationController) ?? context.navigationController
     
-    navigationController?.pushViewController(vc, animated: animated)
+    navigationController?.pushViewController(presentable, animated: animated)
+  }
+}
+
+extension DismissActions where ContextType: UIViewController  {
+  func dismiss(animated: Bool, completion: (() -> Void)?) {
+    context.dismiss(animated: true, completion: completion)
   }
 }

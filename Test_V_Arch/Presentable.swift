@@ -8,6 +8,4 @@
 
 import Foundation
 
-protocol Presentable: NSObjectProtocol {
-  
-}
+protocol Presentable: NSObjectProtocol {}

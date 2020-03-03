@@ -14,7 +14,7 @@ struct TextFieldCallbacks {
 }
 
 final class TextFieldAssembly: Assembly {
-  func assemble(callbacks: TextFieldCallbacks) -> UITextField {
+  func assemble(callbacks: TextFieldCallbacks) -> TextField {
     let textField = TextField()
     let interactor = TextFieldInteractor()
     

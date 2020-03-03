@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 
-final class MainRouter: MainRouterProtocol, RouteActions {
+final class MainRouter: MainRouterProtocol, ShowActions {
   weak var context: MainViewController!
   
   func routeToDetails(callbacks: DetailsCallbacks) {
-    let presenter = DetailsAssembly().assemble(callbacks: callbacks)
-    presenter.onDismiss = { [weak presenter] in
-      
-    }
-    present(presenter, animated: true)
+    let presentable = DetailsAssembly().assemble(callbacks: callbacks)
+    present(presentable, animated: true)
   }
 }
