@@ -48,7 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9CED9D93240D1DEA0087315A /* Test_V_Arch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_V_Arch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CED9D93240D1DEA0087315A /* DemoArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED9D96240D1DEA0087315A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CED9D9F240D1DEC0087315A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CED9DA2240D1DEC0087315A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		9CED9D8A240D1DEA0087315A = {
 			isa = PBXGroup;
 			children = (
-				9CED9D95240D1DEA0087315A /* Test_V_Arch */,
+				9CED9D95240D1DEA0087315A /* DemoArchitecture */,
 				9CED9D94240D1DEA0087315A /* Products */,
 				9CED9E27240FAE8D0087315A /* Frameworks */,
 			);
@@ -99,12 +99,12 @@
 		9CED9D94240D1DEA0087315A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CED9D93240D1DEA0087315A /* Test_V_Arch.app */,
+				9CED9D93240D1DEA0087315A /* DemoArchitecture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9CED9D95240D1DEA0087315A /* Test_V_Arch */ = {
+		9CED9D95240D1DEA0087315A /* DemoArchitecture */ = {
 			isa = PBXGroup;
 			children = (
 				9CED9DF7240F10250087315A /* Deeplinks */,
@@ -117,7 +117,7 @@
 				9CED9DA1240D1DEC0087315A /* LaunchScreen.storyboard */,
 				9CED9DA4240D1DEC0087315A /* Info.plist */,
 			);
-			path = Test_V_Arch;
+			path = DemoArchitecture;
 			sourceTree = "<group>";
 		};
 		9CED9DAA240D1DF40087315A /* Main */ = {
@@ -185,9 +185,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CED9D92240D1DEA0087315A /* Test_V_Arch */ = {
+		9CED9D92240D1DEA0087315A /* DemoArchitecture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CED9DA7240D1DEC0087315A /* Build configuration list for PBXNativeTarget "Test_V_Arch" */;
+			buildConfigurationList = 9CED9DA7240D1DEC0087315A /* Build configuration list for PBXNativeTarget "DemoArchitecture" */;
 			buildPhases = (
 				9CED9D8F240D1DEA0087315A /* Sources */,
 				9CED9D90240D1DEA0087315A /* Frameworks */,
@@ -198,9 +198,9 @@
 			);
 			dependencies = (
 			);
-			name = Test_V_Arch;
-			productName = Test_V_Arch;
-			productReference = 9CED9D93240D1DEA0087315A /* Test_V_Arch.app */;
+			name = DemoArchitecture;
+			productName = DemoArchitecture;
+			productReference = 9CED9D93240D1DEA0087315A /* DemoArchitecture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9CED9D8E240D1DEA0087315A /* Build configuration list for PBXProject "Test_V_Arch" */;
+			buildConfigurationList = 9CED9D8E240D1DEA0087315A /* Build configuration list for PBXProject "DemoArchitecture" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CED9D92240D1DEA0087315A /* Test_V_Arch */,
+				9CED9D92240D1DEA0087315A /* DemoArchitecture */,
 			);
 		};
 /* End PBXProject section */
@@ -410,12 +410,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83W65ZB2H6;
-				INFOPLIST_FILE = Test_V_Arch/Info.plist;
+				INFOPLIST_FILE = DemoArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kravtsov.Test-V-Arch";
+				PRODUCT_BUNDLE_IDENTIFIER = kravtsov.DemoArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -428,12 +428,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83W65ZB2H6;
-				INFOPLIST_FILE = Test_V_Arch/Info.plist;
+				INFOPLIST_FILE = DemoArchitecture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kravtsov.Test-V-Arch";
+				PRODUCT_BUNDLE_IDENTIFIER = kravtsov.DemoArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,7 +443,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CED9D8E240D1DEA0087315A /* Build configuration list for PBXProject "Test_V_Arch" */ = {
+		9CED9D8E240D1DEA0087315A /* Build configuration list for PBXProject "DemoArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CED9DA5240D1DEC0087315A /* Debug */,
@@ -452,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CED9DA7240D1DEC0087315A /* Build configuration list for PBXNativeTarget "Test_V_Arch" */ = {
+		9CED9DA7240D1DEC0087315A /* Build configuration list for PBXNativeTarget "DemoArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CED9DA8240D1DEC0087315A /* Debug */,

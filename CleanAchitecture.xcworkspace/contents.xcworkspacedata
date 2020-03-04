@@ -5,6 +5,6 @@
       location = "group:CleanArchitecture/CleanArchitecture.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DemoArchitecture/Test_V_Arch.xcodeproj">
+      location = "group:DemoArchitecture/DemoArchitecture.xcodeproj">
    </FileRef>
 </Workspace>
