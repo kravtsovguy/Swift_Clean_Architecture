@@ -415,7 +415,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-driver-time-compilation -Xfrontend -debug-time-function-bodies -Xfrontend -debug-time-expression-type-checking -Xfrontend -warn-long-expression-type-checking=60 -Xfrontend -warn-long-function-bodies=60";
 				PRODUCT_BUNDLE_IDENTIFIER = kravtsov.DemoArchitecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
