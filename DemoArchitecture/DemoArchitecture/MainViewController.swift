@@ -16,7 +16,7 @@ final class MainViewController: UIViewController, MainViewProtocol {
     super.viewDidLoad()
     
     title = "Main"
-    view.backgroundColor = .blue
+    view.backgroundColor = UIColor.blue
     
     let button = UIButton(frame: CGRect(x: 100, y: 100, width: 300, height: 50))
     button.setTitle("Show Agreement", for: .normal)

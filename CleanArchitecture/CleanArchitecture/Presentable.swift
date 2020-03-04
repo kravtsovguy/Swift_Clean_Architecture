@@ -13,7 +13,7 @@ public enum PresentebleSettings {
   static var forceWithoutAnimation: Bool = false
 }
 
-public protocol Presentable: NSObjectProtocol {}
+public protocol Presentable: AnyObject {}
 
 extension Presentable where Self: UIViewController {
   public func present(presentable: UIViewController, animated: Bool) {
