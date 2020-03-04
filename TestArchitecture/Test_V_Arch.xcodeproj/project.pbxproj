@@ -29,28 +29,18 @@
 		9CED9DF6240EAFE20087315A /* SolidInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF5240EAFE20087315A /* SolidInteractor.swift */; };
 		9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF8240F10380087315A /* PushDeeplink.swift */; };
 		9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DFA240F10950087315A /* ModalDeeplink.swift */; };
-		9CED9E31240FB17E0087315A /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E30240FB1700087315A /* CleanArchitecture.framework */; };
-		9CED9E32240FB17E0087315A /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E30240FB1700087315A /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9CED9E3D240FBC2E0087315A /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */; };
+		9CED9E3E240FBC2E0087315A /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9CED9E2F240FB1700087315A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9CED9E2B240FB1700087315A /* CleanArchitecture.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9CED9E06240FAE3A0087315A;
-			remoteInfo = CleanArchitecture;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		9CED9E2A240FAE8D0087315A /* Embed Frameworks */ = {
+		9CED9E3F240FBC2E0087315A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9CED9E32240FB17E0087315A /* CleanArchitecture.framework in Embed Frameworks */,
+				9CED9E3E240FBC2E0087315A /* CleanArchitecture.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,7 +72,7 @@
 		9CED9DF5240EAFE20087315A /* SolidInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidInteractor.swift; sourceTree = "<group>"; };
 		9CED9DF8240F10380087315A /* PushDeeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDeeplink.swift; sourceTree = "<group>"; };
 		9CED9DFA240F10950087315A /* ModalDeeplink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDeeplink.swift; sourceTree = "<group>"; };
-		9CED9E2B240FB1700087315A /* CleanArchitecture.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CleanArchitecture.xcodeproj; path = CleanArchitecture/CleanArchitecture.xcodeproj; sourceTree = "<group>"; };
+		9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CED9E31240FB17E0087315A /* CleanArchitecture.framework in Frameworks */,
+				9CED9E3D240FBC2E0087315A /* CleanArchitecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +90,6 @@
 		9CED9D8A240D1DEA0087315A = {
 			isa = PBXGroup;
 			children = (
-				9CED9E2B240FB1700087315A /* CleanArchitecture.xcodeproj */,
 				9CED9D95240D1DEA0087315A /* Test_V_Arch */,
 				9CED9D94240D1DEA0087315A /* Products */,
 				9CED9E27240FAE8D0087315A /* Frameworks */,
@@ -188,16 +177,9 @@
 		9CED9E27240FAE8D0087315A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9CED9E2C240FB1700087315A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9CED9E30240FB1700087315A /* CleanArchitecture.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +192,7 @@
 				9CED9D8F240D1DEA0087315A /* Sources */,
 				9CED9D90240D1DEA0087315A /* Frameworks */,
 				9CED9D91240D1DEA0087315A /* Resources */,
-				9CED9E2A240FAE8D0087315A /* Embed Frameworks */,
+				9CED9E3F240FBC2E0087315A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,28 +229,12 @@
 			mainGroup = 9CED9D8A240D1DEA0087315A;
 			productRefGroup = 9CED9D94240D1DEA0087315A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9CED9E2C240FB1700087315A /* Products */;
-					ProjectRef = 9CED9E2B240FB1700087315A /* CleanArchitecture.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9CED9D92240D1DEA0087315A /* Test_V_Arch */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9CED9E30240FB1700087315A /* CleanArchitecture.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CleanArchitecture.framework;
-			remoteRef = 9CED9E2F240FB1700087315A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9CED9D91240D1DEA0087315A /* Resources */ = {
