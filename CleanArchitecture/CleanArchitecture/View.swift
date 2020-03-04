@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  ViewProtocol.swift
 //  Test_V_Arch
 //
 //  Created by Matvey Kravtsov on 02.03.2020.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol Interactor: AnyObject {
-//  var router: Router! { get }
-//  var presenter: Presenter! { get }
+public protocol View: Presentable {
+//  var interactor: Interactor! { get }
 }

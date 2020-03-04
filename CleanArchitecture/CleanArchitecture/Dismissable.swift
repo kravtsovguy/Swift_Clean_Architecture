@@ -9,7 +9,7 @@
 import Foundation
 import class UIKit.UIViewController
 
-protocol Dismissable: Presentable {
+public protocol Dismissable: Presentable {
   var onDismiss: ((_ presentable: Self, _ completion: (() -> Void)?) -> Void)? { get }
 }
 
@@ -18,7 +18,7 @@ protocol CustomDismissable: Dismissable {
 }
 
 extension Dismissable where Self: UIViewController {
-  var onDismiss: ((_ presentable: Self, _ completion: (() -> Void)?) -> Void)? {
+  public var onDismiss: ((_ presentable: Self, _ completion: (() -> Void)?) -> Void)? {
     return { presentable, completion in
       presentable.dismissPresentable(animated: true, completion: completion)
     }

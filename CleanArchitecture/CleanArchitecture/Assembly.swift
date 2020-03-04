@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Assembly: AnyObject {
+public protocol Assembly: AnyObject {
   associatedtype  RouterType: Router
   
   var router: RouterType? { get }

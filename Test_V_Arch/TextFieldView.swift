@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CleanArchitecture
 
 final class TextField: UITextField, TextFieldViewProtocol {
   var interactor: TextFieldInteractorProtocol!

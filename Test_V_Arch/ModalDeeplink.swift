@@ -6,7 +6,7 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
+import CleanArchitecture
 
 struct ModalDeeplink: Deeplink {
   typealias CombinedStep = Step<MainRouter, EmptyStep>

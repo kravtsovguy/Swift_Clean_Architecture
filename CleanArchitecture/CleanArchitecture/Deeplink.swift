@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol StepProtocol {
+public protocol StepProtocol {
   associatedtype RouterType: Router
   init(router: RouterType?)
 }
 
-protocol Deeplink {
+public protocol Deeplink {
   associatedtype CombinedStep: StepProtocol  
   typealias RouterType = CombinedStep.RouterType
   typealias InitialStepType = InitialStep<CombinedStep>
@@ -23,32 +23,40 @@ protocol Deeplink {
 }
 
 extension Deeplink {
-  func createInitialState(router: RouterType?) -> InitialStepType {
+  public func createInitialState(router: RouterType?) -> InitialStepType {
     InitialStepType(router: router)
   }
 }
 
-struct EmptyStep: StepProtocol {
-  init(router: EmptyRouter?) {}
+public struct EmptyStep: StepProtocol {
+  public init(router: EmptyRouter?) {}
   
-  func finish() {
+  public func finish() {
     PresentebleSettings.forceWithoutAnimation = false
   }
 }
 
-struct InitialStep<StepType: StepProtocol>: StepProtocol {
+public struct InitialStep<StepType: StepProtocol>: StepProtocol {
   let router: StepType.RouterType?
   
-  func start() -> StepType {
+  public init(router: StepType.RouterType?) {
+    self.router = router
+  }
+  
+  public func start() -> StepType {
     PresentebleSettings.forceWithoutAnimation = true
     return StepType(router: router)
   }
 }
 
-struct Step<RouterType: Router, StepType: StepProtocol>: StepProtocol {
+public struct Step<RouterType: Router, StepType: StepProtocol>: StepProtocol {
   let router: RouterType?
   
-  func step(routing: (_ router: RouterType) -> StepType.RouterType?) -> StepType {
+  public init(router: RouterType?) {
+    self.router = router
+  }
+  
+  public func step(routing: (_ router: RouterType) -> StepType.RouterType?) -> StepType {
     guard let router = router else { return StepType(router: nil) }
     let nextRouter = routing(router)
     return StepType(router: nextRouter)

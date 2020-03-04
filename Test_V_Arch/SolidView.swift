@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CleanArchitecture
 
 class SolidViewController: UIViewController, SolidViewProtocol {
   var interactor: SolidInteractorProtocol!

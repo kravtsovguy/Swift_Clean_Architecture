@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CleanArchitecture
 
 protocol DetailsView: View, Dismissable {
   var callbacks: DetailsCallbacks? { get set }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CleanArchitecture
 
 final class MainViewController: UIViewController, MainViewProtocol {
   var interactor: MainInteractorProtocol!
