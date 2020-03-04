@@ -11,3 +11,5 @@ import Foundation
 protocol Router: AnyObject {
 //  var context: Presentable! { get }
 }
+
+final class EmptyRouter: Router {}

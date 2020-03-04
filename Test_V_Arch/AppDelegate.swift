@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     DispatchQueue.main.async {
 //      self.modalDeeplink.run(router: self.mainAssembly.router)
-      self.solidDeeplink.run(router: self.mainAssembly.router)
+//      self.solidDeeplink.run(router: self.mainAssembly.router)
     }
     
     return true

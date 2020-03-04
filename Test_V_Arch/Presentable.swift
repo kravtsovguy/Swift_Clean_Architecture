@@ -9,27 +9,29 @@
 import Foundation
 import UIKit
 
-public var forceWithoutAnimation: Bool = false
+enum PresentebleSettings {
+  static var forceWithoutAnimation: Bool = false
+}
 
 protocol Presentable: NSObjectProtocol {}
 
 extension Presentable where Self: UIViewController {
   func present(presentable: UIViewController, animated: Bool) {
-    let animated = animated ? !forceWithoutAnimation : false
+    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
     present(presentable, animated: animated)
   }
   
   func push(presentable: UIViewController, animated: Bool) {
     let navigationController = (self as? UINavigationController) ?? self.navigationController
     
-    let animated = animated ? !forceWithoutAnimation : false
+    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
     navigationController?.pushViewController(presentable, animated: animated)
   }
   
   func dismissPresentable(animated: Bool, completion: (() -> Void)?) {
     let navigationController = (self as? UINavigationController) ?? self.navigationController
     
-    let animated = animated ? !forceWithoutAnimation : false
+    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
     let popVC = navigationController?.popViewController(animated: animated)
     if popVC == nil {
       dismiss(animated: true, completion: completion)

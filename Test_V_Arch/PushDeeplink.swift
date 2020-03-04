@@ -8,27 +8,29 @@
 
 import Foundation
 
-final class PushDeeplink: Deeplink {
+struct PushDeeplink: Deeplink {
+  typealias CombinedStep = Step<MainRouter, Step1>
+  typealias Step1 = Step<SolidRouter, Step2>
+  typealias Step2 = Step<SolidRouter, EmptyStep>
+  
   func run(router: MainRouter?) {
-    forceWithoutAnimation = true
-    defer { forceWithoutAnimation = false }
-    
-    typealias Step0 = Step<MainRouter, Step1>
-    typealias Step1 = Step<SolidRouter, Step2>
-    typealias Step2 = Step<SolidRouter, EmptyStep>
-    
-    Step0(router: router)
+    createInitialState(router: router)
+      .start()
       .step { router in
         router.routeToSolid()
-        return Step1(router: router.solidAssembly.router)
+        
+        return router.solidAssembly.router
       }
       .step(routing: { router in
         router.routeToSolid(title: "1")
-        return Step2(router: router.solidAssembly.router)
+        
+        return router.solidAssembly.router
       })
       .step { router in
         router.routeToSolid(title: "2")
-        return EmptyStep(router: nil)
+        
+        return nil
       }
+      .finish()
   }
 }

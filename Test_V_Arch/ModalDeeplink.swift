@@ -8,12 +8,16 @@
 
 import Foundation
 
-final class ModalDeeplink: Deeplink {
+struct ModalDeeplink: Deeplink {
+  typealias CombinedStep = Step<MainRouter, EmptyStep>
+  
   func run(router: MainRouter?) {
-    Step<MainRouter, EmptyStep>(router: router)
+    createInitialState(router: router)
+      .start()
       .step { router in
         router.routeToDetails(callbacks: nil)
-        return EmptyStep(router: nil)
+        return nil
       }
+      .finish()
   }
 }
