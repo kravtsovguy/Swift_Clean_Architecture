@@ -16,19 +16,22 @@ public protocol StepProtocol {
 public protocol Deeplink {
   associatedtype CombinedStep: StepProtocol  
   typealias RoutableContainerType = CombinedStep.RoutableContainerType
-  typealias InitialStepType = InitialStep<CombinedStep>
   
-  func createInitialState(container: RoutableContainerType) -> InitialStepType
+  // public interface
   func run(container: RoutableContainerType)
+  
+  // to implement
+  func start(step: CombinedStep)
 }
 
 extension Deeplink {
-  public func createInitialState(container: RoutableContainerType) -> InitialStepType {
-    InitialStepType(container: container)
+  public func run(container: RoutableContainerType) {
+    let step = InitialStep<CombinedStep>(container: container).start()
+    start(step: step)
   }
 }
 
-public struct InitialStep<StepType: StepProtocol>: StepProtocol {
+private struct InitialStep<StepType: StepProtocol>: StepProtocol {
   let container: StepType.RoutableContainerType
   
   public init(container: StepType.RoutableContainerType) {

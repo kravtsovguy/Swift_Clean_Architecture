@@ -11,11 +11,9 @@ import CleanArchitecture
 struct ModalDeeplink: Deeplink {
   typealias CombinedStep = SingleStep<MainAssembly>
   
-  func run(container: MainAssembly) {
+  func start(step: CombinedStep) {
     try?
-    createInitialState(container: container)
-      .start()
-      .step { router in
+    step.step { router in
         router.routeToDetails(callbacks: nil)
       }
   }

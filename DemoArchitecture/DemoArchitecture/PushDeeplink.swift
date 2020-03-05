@@ -13,10 +13,9 @@ struct PushDeeplink: Deeplink {
   typealias Step1 = Step<SolidAssembly, Step2>
   typealias Step2 = SingleStep<SolidAssembly>
   
-  func run(container: MainAssembly) {
+  func start(step: CombinedStep) {
     try?
-    createInitialState(container: container)
-      .start()
+      step
       .step { router in
         router.routeToSolid()
         
