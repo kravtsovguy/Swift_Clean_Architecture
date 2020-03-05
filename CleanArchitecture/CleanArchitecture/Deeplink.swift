@@ -33,29 +33,31 @@ extension Deeplink {
 }
 
 public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol {
-  let container: RoutableContainerType
+  private let container: RoutableContainerType
+  public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> Void
   
   public init(container: RoutableContainerType) {
     self.container = container
   }
   
-  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> Void) throws {
+  public func step(routing: RoutingClosure) throws {
     guard let router = container.router else { throw StepError.noRouter }
     routing(router)
   }
 }
 
-public struct Step<RoutableContainerType: RoutableContainer, StepType: StepProtocol>: StepProtocol {
-  let container: RoutableContainerType
+public struct Step<RoutableContainerType: RoutableContainer, NextStepType: StepProtocol>: StepProtocol {
+  private let container: RoutableContainerType
+  public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> NextStepType.RoutableContainerType
   
   public init(container: RoutableContainerType) {
     self.container = container
   }
   
-  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> StepType.RoutableContainerType) throws -> StepType {
+  public func step(routing: RoutingClosure) throws -> NextStepType {
     guard let router = container.router else { throw StepError.noRouter }
     let nextContainer = routing(router)
-    return StepType(container: nextContainer)
+    return NextStepType(container: nextContainer)
   }
 }
 
