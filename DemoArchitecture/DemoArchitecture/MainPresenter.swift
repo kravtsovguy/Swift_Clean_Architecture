@@ -1,6 +1,6 @@
 //
 //  MainPresenter.swift
-//  Test_V_Arch
+//  DemoArchitecture
 //
 //  Created by Matvey Kravtsov on 02.03.2020.
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
