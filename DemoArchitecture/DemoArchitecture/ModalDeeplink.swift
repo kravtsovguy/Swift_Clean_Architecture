@@ -9,7 +9,7 @@
 import CleanArchitecture
 
 struct ModalDeeplink: Deeplink {
-  typealias CombinedStep = Step<MainAssembly, EmptyStep>
+  typealias CombinedStep = SingleStep<MainAssembly>
   
   func run(container: MainAssembly) {
     try?
@@ -18,6 +18,5 @@ struct ModalDeeplink: Deeplink {
       .step { router in
         router.routeToDetails(callbacks: nil)
       }
-      .finish()
   }
 }

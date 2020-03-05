@@ -28,14 +28,6 @@ extension Deeplink {
   }
 }
 
-public struct EmptyStep: StepProtocol {
-  public init(container: EmptyRoutableContainer) {}
-
-  public func finish() {
-    PresentebleSettings.forceWithoutAnimation = false
-  }
-}
-
 public struct InitialStep<StepType: StepProtocol>: StepProtocol {
   let container: StepType.RoutableContainerType
   
@@ -46,6 +38,24 @@ public struct InitialStep<StepType: StepProtocol>: StepProtocol {
   public func start() -> StepType {
     PresentebleSettings.forceWithoutAnimation = true
     return StepType(container: container)
+  }
+}
+
+public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol {
+  let container: RoutableContainerType
+  
+  public init(container: RoutableContainerType) {
+    self.container = container
+  }
+  
+  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> Void) throws {
+    guard let router = container.router else { throw StepError.noRouter }
+    routing(router)
+    finish()
+  }
+  
+  private func finish() {
+    PresentebleSettings.forceWithoutAnimation = false
   }
 }
 
@@ -60,14 +70,6 @@ public struct Step<RoutableContainerType: RoutableContainer, StepType: StepProto
     guard let router = container.router else { throw StepError.noRouter }
     let nextContainer = routing(router)
     return StepType(container: nextContainer)
-  }
-}
-
-extension Step where StepType == EmptyStep {
-  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> Void) throws -> StepType {
-    guard let router = container.router else { throw StepError.noRouter }
-    routing(router)
-    return StepType(container: EmptyRoutableContainer())
   }
 }
 

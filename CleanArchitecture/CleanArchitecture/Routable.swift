@@ -19,13 +19,3 @@ public protocol RoutableContainer: AnyObject {
 
 /// Протокол, нужный для диплинков
 public protocol Routable: AnyObject {}
-
-/// Пустой роутинг для диплинков
-public final class EmptyRoutable: Routable {}
-
-/// Пустой контейнер для диплинков
-public final class EmptyRoutableContainer: RoutableContainer {
-  public var router: EmptyRoutable?
-  
-  public init() {}
-}

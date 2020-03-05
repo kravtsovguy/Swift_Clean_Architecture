@@ -11,7 +11,7 @@ import CleanArchitecture
 struct PushDeeplink: Deeplink {
   typealias CombinedStep = Step<MainAssembly, Step1>
   typealias Step1 = Step<SolidAssembly, Step2>
-  typealias Step2 = Step<SolidAssembly, EmptyStep>
+  typealias Step2 = SingleStep<SolidAssembly>
   
   func run(container: MainAssembly) {
     try?
@@ -30,6 +30,5 @@ struct PushDeeplink: Deeplink {
       .step { router in
         router.routeToSolid(title: "2")
       }
-      .finish()
   }
 }
