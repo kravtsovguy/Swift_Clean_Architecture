@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     DispatchQueue.main.async {
 //      self.modalDeeplink.run(container: self.mainAssembly)
-//      self.solidDeeplink.run(container: self.mainAssembly)
+//      self.solidDeeplink.run(container: self.mainAssembly) {
+//        print("Deeplink finished")
+//      }
     }
     
     return true

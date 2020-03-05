@@ -13,8 +13,8 @@ struct ModalDeeplink: Deeplink {
   
   func start(combinedStep: CombinedStep) throws {
     try combinedStep
-      .animatedStep { router in
-        router.routeToDetails(callbacks: nil)
-      }
+    .animatedStep { router in
+      router.routeToDetails(callbacks: nil)
+    }
   }
 }

@@ -21,17 +21,15 @@ public protocol Deeplink {
   associatedtype CombinedStep: StepProtocol  
   typealias RoutableContainerType = CombinedStep.RoutableContainerType
   
-  // public interface
-  func run(container: RoutableContainerType)
-  
   // to implement
   func start(combinedStep: CombinedStep) throws
 }
 
 extension Deeplink {
-  public func run(container: RoutableContainerType) {
+  public func run(container: RoutableContainerType, completion: (() -> Void)? = nil) {
     deeplinkQueue.async {
       try? self.start(combinedStep: CombinedStep(container: container))
+      completion?()
     }
   }
 }
@@ -105,6 +103,20 @@ public struct Step<RoutableContainerType: RoutableContainer, NextStepType: StepP
     group.wait()
     
     return NextStepType(container: nextContainer)
+  }
+}
+
+public struct FlowStep<NextStepType: StepProtocol>: StepProtocol {
+  private let container: NextStepType.RoutableContainerType
+  
+  public init(container: NextStepType.RoutableContainerType) {
+    self.container = container
+  }
+  
+  public func step(routing: () -> Void) -> NextStepType {
+    routing()
+    
+    return NextStepType(container: container)
   }
 }
 
