@@ -14,8 +14,6 @@ struct DetailsCallbacks {
 }
 
 final class DetailsAssembly: Assembly {
-  private(set) weak var router: EmptyRouter?
-  
   func assemble(callbacks: DetailsCallbacks?) -> DetailsViewController {
     let viewController = DetailsViewController()
     viewController.callbacks = callbacks

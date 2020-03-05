@@ -13,8 +13,6 @@ struct TextFieldCallbacks {
 }
 
 final class TextFieldAssembly: Assembly {
-  private(set) weak var router: EmptyRouter?
-  
   func assemble(callbacks: TextFieldCallbacks) -> TextField {
     let textField = TextField()
     let interactor = TextFieldInteractor()

@@ -9,56 +9,68 @@
 import Foundation
 
 public protocol StepProtocol {
-  associatedtype RouterType: Router
-  init(router: RouterType?)
+  associatedtype RoutableContainerType: RoutableContainer
+  init(container: RoutableContainerType)
 }
 
 public protocol Deeplink {
   associatedtype CombinedStep: StepProtocol  
-  typealias RouterType = CombinedStep.RouterType
+  typealias RoutableContainerType = CombinedStep.RoutableContainerType
   typealias InitialStepType = InitialStep<CombinedStep>
   
-  func createInitialState(router: RouterType?) -> InitialStepType
-  func run(router: RouterType?)
+  func createInitialState(container: RoutableContainerType) -> InitialStepType
+  func run(container: RoutableContainerType)
 }
 
 extension Deeplink {
-  public func createInitialState(router: RouterType?) -> InitialStepType {
-    InitialStepType(router: router)
+  public func createInitialState(container: RoutableContainerType) -> InitialStepType {
+    InitialStepType(container: container)
   }
 }
 
 public struct EmptyStep: StepProtocol {
-  public init(router: EmptyRouter?) {}
-  
+  public init(container: EmptyRoutableContainer) {}
+
   public func finish() {
     PresentebleSettings.forceWithoutAnimation = false
   }
 }
 
 public struct InitialStep<StepType: StepProtocol>: StepProtocol {
-  let router: StepType.RouterType?
+  let container: StepType.RoutableContainerType
   
-  public init(router: StepType.RouterType?) {
-    self.router = router
+  public init(container: StepType.RoutableContainerType) {
+    self.container = container
   }
   
   public func start() -> StepType {
     PresentebleSettings.forceWithoutAnimation = true
-    return StepType(router: router)
+    return StepType(container: container)
   }
 }
 
-public struct Step<RouterType: Router, StepType: StepProtocol>: StepProtocol {
-  let router: RouterType?
+public struct Step<RoutableContainerType: RoutableContainer, StepType: StepProtocol>: StepProtocol {
+  let container: RoutableContainerType
   
-  public init(router: RouterType?) {
-    self.router = router
+  public init(container: RoutableContainerType) {
+    self.container = container
   }
   
-  public func step(routing: (_ router: RouterType) -> StepType.RouterType?) -> StepType {
-    guard let router = router else { return StepType(router: nil) }
-    let nextRouter = routing(router)
-    return StepType(router: nextRouter)
+  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> StepType.RoutableContainerType) throws -> StepType {
+    guard let router = container.router else { throw StepError.noRouter }
+    let nextContainer = routing(router)
+    return StepType(container: nextContainer)
   }
+}
+
+extension Step where StepType == EmptyStep {
+  public func step(routing: (_ router: RoutableContainerType.RoutableType) -> Void) throws -> StepType {
+    guard let router = container.router else { throw StepError.noRouter }
+    routing(router)
+    return StepType(container: EmptyRoutableContainer())
+  }
+}
+
+private enum StepError: Error {
+  case noRouter
 }

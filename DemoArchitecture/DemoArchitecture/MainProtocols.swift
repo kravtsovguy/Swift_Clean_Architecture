@@ -8,7 +8,7 @@
 
 import CleanArchitecture
 
-protocol MainRouterProtocol: Router {
+protocol MainRouterProtocol: Router, Routable {
   var context: MainViewController! { get }
   
   func routeToDetails(callbacks: DetailsCallbacks?)

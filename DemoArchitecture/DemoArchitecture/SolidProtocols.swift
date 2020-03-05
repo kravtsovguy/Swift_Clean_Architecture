@@ -8,7 +8,7 @@
 
 import CleanArchitecture
 
-protocol SolidRouterProtocol: Router {
+protocol SolidRouterProtocol: Router, Routable {
   var context: SolidViewController! { get }
   
   func routeToSolid(title: String)

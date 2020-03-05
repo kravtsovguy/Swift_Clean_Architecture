@@ -9,27 +9,26 @@
 import CleanArchitecture
 
 struct PushDeeplink: Deeplink {
-  typealias CombinedStep = Step<MainRouter, Step1>
-  typealias Step1 = Step<SolidRouter, Step2>
-  typealias Step2 = Step<SolidRouter, EmptyStep>
+  typealias CombinedStep = Step<MainAssembly, Step1>
+  typealias Step1 = Step<SolidAssembly, Step2>
+  typealias Step2 = Step<SolidAssembly, EmptyStep>
   
-  func run(router: MainRouter?) {
-    createInitialState(router: router)
+  func run(container: MainAssembly) {
+    try?
+    createInitialState(container: container)
       .start()
       .step { router in
         router.routeToSolid()
         
-        return router.solidAssembly.router
+        return router.solidAssembly
       }
       .step(routing: { router in
         router.routeToSolid(title: "1")
         
-        return router.solidAssembly.router
+        return router.solidAssembly
       })
       .step { router in
         router.routeToSolid(title: "2")
-        
-        return nil
       }
       .finish()
   }

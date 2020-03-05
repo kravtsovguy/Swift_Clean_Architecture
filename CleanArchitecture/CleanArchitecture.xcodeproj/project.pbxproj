@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C7C5E62241112FA008E8535 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C5E61241112FA008E8535 /* Routable.swift */; };
 		9CED9E0B240FAE3A0087315A /* CleanArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CED9E09240FAE3A0087315A /* CleanArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CED9E1F240FAE560087315A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9E17240FAE550087315A /* Router.swift */; };
 		9CED9E20240FAE560087315A /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9E18240FAE550087315A /* Presentable.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C7C5E61241112FA008E8535 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		9CED9E06240FAE3A0087315A /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED9E09240FAE3A0087315A /* CleanArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanArchitecture.h; sourceTree = "<group>"; };
 		9CED9E0A240FAE3A0087315A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				9CED9E09240FAE3A0087315A /* CleanArchitecture.h */,
 				9CED9E1A240FAE550087315A /* Deeplink.swift */,
+				9C7C5E61241112FA008E8535 /* Routable.swift */,
 				9CED9E18240FAE550087315A /* Presentable.swift */,
 				9CED9E19240FAE550087315A /* Dismissable.swift */,
 				9CED9E1B240FAE550087315A /* Assembly.swift */,
@@ -162,6 +165,7 @@
 				9CED9E22240FAE560087315A /* Deeplink.swift in Sources */,
 				9CED9E1F240FAE560087315A /* Router.swift in Sources */,
 				9CED9E25240FAE560087315A /* View.swift in Sources */,
+				9C7C5E62241112FA008E8535 /* Routable.swift in Sources */,
 				9CED9E20240FAE560087315A /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

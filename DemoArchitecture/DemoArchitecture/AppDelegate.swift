@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.makeKeyAndVisible()
     
     DispatchQueue.main.async {
-//      self.modalDeeplink.run(router: self.mainAssembly.router)
-//      self.solidDeeplink.run(router: self.mainAssembly.router)
+//      self.modalDeeplink.run(container: self.mainAssembly)
+//      self.solidDeeplink.run(container: self.mainAssembly)
     }
     
     return true
