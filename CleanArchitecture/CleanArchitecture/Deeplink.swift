@@ -21,26 +21,14 @@ public protocol Deeplink {
   func run(container: RoutableContainerType)
   
   // to implement
-  func start(step: CombinedStep)
+  func start(combinedStep: CombinedStep) throws
 }
 
 extension Deeplink {
   public func run(container: RoutableContainerType) {
-    let step = InitialStep<CombinedStep>(container: container).start()
-    start(step: step)
-  }
-}
-
-private struct InitialStep<StepType: StepProtocol>: StepProtocol {
-  let container: StepType.RoutableContainerType
-  
-  public init(container: StepType.RoutableContainerType) {
-    self.container = container
-  }
-  
-  public func start() -> StepType {
     PresentebleSettings.forceWithoutAnimation = true
-    return StepType(container: container)
+    try? start(combinedStep: CombinedStep(container: container))
+    PresentebleSettings.forceWithoutAnimation = false
   }
 }
 
@@ -54,11 +42,6 @@ public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol
   public func step(routing: (_ router: RoutableContainerType.RoutableType) -> Void) throws {
     guard let router = container.router else { throw StepError.noRouter }
     routing(router)
-    finish()
-  }
-  
-  private func finish() {
-    PresentebleSettings.forceWithoutAnimation = false
   }
 }
 
