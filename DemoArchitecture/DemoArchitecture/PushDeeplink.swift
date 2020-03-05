@@ -15,17 +15,17 @@ struct PushDeeplink: Deeplink {
   
   func start(combinedStep: CombinedStep) throws {
       try combinedStep
-      .step { router in
+      .animatedStep { router in
         router.routeToSolid()
         
         return router.solidAssembly
       }
-      .step(routing: { router in
+      .animatedStep { router in
         router.routeToSolid(title: "1")
         
         return router.solidAssembly
-      })
-      .step { router in
+      }
+      .animatedStep { router in
         router.routeToSolid(title: "2")
       }
   }

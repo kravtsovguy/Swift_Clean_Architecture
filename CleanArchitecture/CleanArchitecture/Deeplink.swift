@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import QuartzCore
+
+private let deeplinkQueue = DispatchQueue(label: "DeeplinkDispatchQueue",
+                                          qos: .userInitiated)
 
 public protocol StepProtocol {
   associatedtype RoutableContainerType: RoutableContainer
@@ -26,9 +30,9 @@ public protocol Deeplink {
 
 extension Deeplink {
   public func run(container: RoutableContainerType) {
-    PresentebleSettings.forceWithoutAnimation = true
-    try? start(combinedStep: CombinedStep(container: container))
-    PresentebleSettings.forceWithoutAnimation = false
+    deeplinkQueue.async {
+      try? self.start(combinedStep: CombinedStep(container: container))
+    }
   }
 }
 
@@ -42,7 +46,27 @@ public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol
   
   public func step(routing: RoutingClosure) throws {
     guard let router = container.router else { throw StepError.noRouter }
-    routing(router)
+    
+    PresentebleSettings.forceWithoutAnimation = true
+    DispatchQueue.main.sync { routing(router) }
+    PresentebleSettings.forceWithoutAnimation = false
+  }
+  
+  public func animatedStep(routing: RoutingClosure) throws {
+    guard let router = container.router else { throw StepError.noRouter }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    DispatchQueue.main.sync {
+      CATransaction.begin()
+      defer { CATransaction.commit() }
+      
+      CATransaction.setCompletionBlock { group.leave() }
+      routing(router)
+    }
+    
+    group.wait()
   }
 }
 
@@ -56,7 +80,30 @@ public struct Step<RoutableContainerType: RoutableContainer, NextStepType: StepP
   
   public func step(routing: RoutingClosure) throws -> NextStepType {
     guard let router = container.router else { throw StepError.noRouter }
-    let nextContainer = routing(router)
+    
+    PresentebleSettings.forceWithoutAnimation = true
+    let nextContainer = DispatchQueue.main.sync { routing(router) }
+    PresentebleSettings.forceWithoutAnimation = false
+    
+    return NextStepType(container: nextContainer)
+  }
+  
+  public func animatedStep(routing: RoutingClosure) throws -> NextStepType {
+    guard let router = container.router else { throw StepError.noRouter }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    let nextContainer: NextStepType.RoutableContainerType = DispatchQueue.main.sync {
+      CATransaction.begin()
+      defer { CATransaction.commit() }
+      
+      CATransaction.setCompletionBlock { group.leave() }
+      return routing(router)
+    }
+    
+    group.wait()
+    
     return NextStepType(container: nextContainer)
   }
 }
