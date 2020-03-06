@@ -6,7 +6,7 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 //! Project version number for CleanArchitecture.
 FOUNDATION_EXPORT double CleanArchitectureVersionNumber;

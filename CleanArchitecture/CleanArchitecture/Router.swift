@@ -6,8 +6,6 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
-
 public protocol Router: AnyObject {
 //  var context: Presentable! { get }
 }

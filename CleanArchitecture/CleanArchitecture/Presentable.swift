@@ -6,8 +6,8 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import class UIKit.UIViewController
+import class UIKit.UINavigationController
 
 enum PresentebleSettings {
   static var forceWithoutAnimation: Bool = false
@@ -29,10 +29,10 @@ extension Presentable where Self: UIViewController {
   }
   
   public func dismissPresentable(animated: Bool, completion: (() -> Void)? = nil) {
-    let navigationController = (self as? UINavigationController) ?? self.navigationController
+    let nc: UINavigationController? = (self as? UINavigationController) ?? navigationController
     
     let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
-    let popVC = navigationController?.popViewController(animated: animated)
+    let popVC = nc?.popViewController(animated: animated)
     if popVC == nil {
       dismiss(animated: true, completion: completion)
     } else {

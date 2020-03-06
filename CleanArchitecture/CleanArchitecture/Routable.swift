@@ -6,8 +6,6 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
-
 // MARK: Deeplink Support
 
 /// Контейнер для хранения роутинга

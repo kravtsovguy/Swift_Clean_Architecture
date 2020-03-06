@@ -6,8 +6,7 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
-import QuartzCore
+import class QuartzCore.CATransaction
 
 private let deeplinkQueue = DispatchQueue(label: "DeeplinkDispatchQueue",
                                           qos: .userInitiated)

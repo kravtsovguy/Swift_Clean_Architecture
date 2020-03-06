@@ -6,8 +6,6 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
-
 public protocol Interactor: AnyObject {
 //  var router: Router! { get }
 //  var presenter: Presenter! { get }

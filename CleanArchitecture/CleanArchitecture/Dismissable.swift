@@ -6,7 +6,6 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-import Foundation
 import class UIKit.UIViewController
 
 public protocol Dismissable: Presentable {
