@@ -12,6 +12,8 @@ final class MainInteractor: MainInteractorProtocol {
   var router: MainRouterProtocol!
   var presenter: MainPresenterProtocol!
   
+  @Dependencies.Inject(name: DependencyName.nameService) private var nameService: NameService
+  
   func buttonTapped() {
     router.routeToDetails(callbacks: DetailsCallbacks(onAccept: {
       print("accept")
@@ -22,5 +24,6 @@ final class MainInteractor: MainInteractorProtocol {
   
   func testButtonTapped() {
     router.routeToSolid()
+    print(nameService.name(firstname: "A", surname: "B"))
   }
 }

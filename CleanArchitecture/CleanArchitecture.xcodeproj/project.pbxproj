@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C15794B2413A1E90043DAFB /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15794A2413A1E90043DAFB /* Dependencies.swift */; };
 		9C7C5E62241112FA008E8535 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C5E61241112FA008E8535 /* Routable.swift */; };
 		9CED9E0B240FAE3A0087315A /* CleanArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CED9E09240FAE3A0087315A /* CleanArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CED9E1F240FAE560087315A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9E17240FAE550087315A /* Router.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C15794A2413A1E90043DAFB /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		9C7C5E61241112FA008E8535 /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		9CED9E06240FAE3A0087315A /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED9E09240FAE3A0087315A /* CleanArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CleanArchitecture.h; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				9CED9E09240FAE3A0087315A /* CleanArchitecture.h */,
+				9C15794A2413A1E90043DAFB /* Dependencies.swift */,
 				9CED9E1A240FAE550087315A /* Deeplink.swift */,
 				9C7C5E61241112FA008E8535 /* Routable.swift */,
 				9CED9E18240FAE550087315A /* Presentable.swift */,
@@ -166,6 +169,7 @@
 				9CED9E1F240FAE560087315A /* Router.swift in Sources */,
 				9CED9E25240FAE560087315A /* View.swift in Sources */,
 				9C7C5E62241112FA008E8535 /* Routable.swift in Sources */,
+				9C15794B2413A1E90043DAFB /* Dependencies.swift in Sources */,
 				9CED9E20240FAE560087315A /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

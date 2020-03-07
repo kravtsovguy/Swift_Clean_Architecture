@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15794D2413AD5C0043DAFB /* NameService.swift */; };
 		9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9D96240D1DEA0087315A /* AppDelegate.swift */; };
 		9CED9DA0240D1DEC0087315A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CED9D9F240D1DEC0087315A /* Assets.xcassets */; };
 		9CED9DA3240D1DEC0087315A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CED9DA1240D1DEC0087315A /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C15794D2413AD5C0043DAFB /* NameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameService.swift; sourceTree = "<group>"; };
 		9CED9D93240D1DEA0087315A /* DemoArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED9D96240D1DEA0087315A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CED9D9F240D1DEC0087315A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C15794C2413AD140043DAFB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9C15794D2413AD5C0043DAFB /* NameService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		9CED9D8A240D1DEA0087315A = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		9CED9D95240D1DEA0087315A /* DemoArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				9C15794C2413AD140043DAFB /* Services */,
 				9CED9DF7240F10250087315A /* Deeplinks */,
 				9CED9DAA240D1DF40087315A /* Main */,
 				9CED9DCB240D45F10087315A /* Details */,
@@ -259,6 +270,7 @@
 				9CED9DCD240D46110087315A /* DetailsAssembly.swift in Sources */,
 				9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */,
 				9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */,
+				9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */,
 				9CED9DB6240D22500087315A /* MainPresenter.swift in Sources */,
 				9CED9DAC240D1E0F0087315A /* MainAssembly.swift in Sources */,
 				9CED9DC3240D29820087315A /* MainProtocols.swift in Sources */,
