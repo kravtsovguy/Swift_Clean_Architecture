@@ -9,12 +9,6 @@
 import UIKit
 import CleanArchitecture
 
-enum DependencyName: String, CleanArchitecture.DependencyName {
-  case nameService
-  
-  var description: String { self.rawValue }
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
@@ -25,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    Dependencies.Container.default.register(name: DependencyName.nameService, NameServiceImp())
+    Dependencies.Container.default.register(NameService.self) { _ in NameServiceImp() }
     
     window = UIWindow()
     window?.rootViewController = UINavigationController(rootViewController: mainAssembly.assemble())

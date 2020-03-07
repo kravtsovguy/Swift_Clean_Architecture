@@ -6,20 +6,22 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
-public protocol DependencyName: CustomStringConvertible {}
-
 public enum Dependencies {
   final public class Container {
     private var dependencies: [String: Any] = [:]
       
     public static let `default` = Container()
     
-    public func register<DependencyType>(name: DependencyName, _ dependency: DependencyType) {
-      dependencies[name.description] = dependency
+    public func register<DependencyType>(_ type: DependencyType.Type, closure: (Container) -> DependencyType) {
+      dependencies[key(type)] = closure(self)
     }
     
-    public func resolve<DependencyType>(_ name: DependencyName) -> DependencyType {
-      dependencies[name.description] as! DependencyType
+    public func resolve<DependencyType>(_ type: DependencyType.Type) -> DependencyType {
+      dependencies[key(type)] as! DependencyType
+    }
+    
+    private func key<DependencyType>(_ type: DependencyType.Type) -> String {
+      String(describing: type)
     }
   }
   
@@ -27,9 +29,12 @@ public enum Dependencies {
   public struct Inject<DependencyType> {
     public let wrappedValue: DependencyType
     
-    public init(container: Container = .default, name: DependencyName) {
-      wrappedValue = container.resolve(name)
+    public init(container: Container) {
+      wrappedValue = container.resolve(DependencyType.self)
+    }
+    
+    public init() {
+      wrappedValue = Container.default.resolve(DependencyType.self)
     }
   }
-
 }

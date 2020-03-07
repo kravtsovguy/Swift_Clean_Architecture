@@ -12,7 +12,7 @@ final class MainInteractor: MainInteractorProtocol {
   var router: MainRouterProtocol!
   var presenter: MainPresenterProtocol!
   
-  @Dependencies.Inject(name: DependencyName.nameService) private var nameService: NameService
+  @Dependencies.Inject private var nameService: NameService
   
   func buttonTapped() {
     router.routeToDetails(callbacks: DetailsCallbacks(onAccept: {
