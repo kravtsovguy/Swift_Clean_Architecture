@@ -19,17 +19,17 @@ struct PushDeeplink: Deeplink {
     .step {
       sleep(1)
     }
-    .animatedStep { router in
+    .step { router in
       router.routeToSolid()
       
       return router.solidAssembly
     }
-    .animatedStep { router in
+    .step { router in
       router.routeToSolid(title: "1")
       
       return router.solidAssembly
     }
-    .animatedStep { router in
+    .step { router in
       router.routeToSolid(title: "2")
     }
   }

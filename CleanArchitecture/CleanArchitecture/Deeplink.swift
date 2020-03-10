@@ -35,18 +35,31 @@ extension Deeplink {
 
 public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol {
   private let container: RoutableContainerType
+//  private let step: Step<RoutableContainerType, Self>
+  
   public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> Void
   
   public init(container: RoutableContainerType) {
     self.container = container
+//    self.step = Step<RoutableContainerType, Self>(container: container)
   }
   
   public func step(routing: RoutingClosure) throws {
     guard let router = container.router else { throw StepError.noRouter }
     
-    PresentebleSettings.forceWithoutAnimation = true
-    DispatchQueue.main.sync { routing(router) }
-    PresentebleSettings.forceWithoutAnimation = false
+    let group = DispatchGroup()
+    group.enter()
+    
+    DispatchQueue.main.sync {
+      CATransaction.begin()
+      defer { CATransaction.commit() }
+      
+      CATransaction.setDisableActions(true)
+      CATransaction.setCompletionBlock { group.leave() }
+      routing(router)
+    }
+    
+    group.wait()
   }
   
   public func animatedStep(routing: RoutingClosure) throws {
@@ -78,9 +91,19 @@ public struct Step<RoutableContainerType: RoutableContainer, NextStepType: StepP
   public func step(routing: RoutingClosure) throws -> NextStepType {
     guard let router = container.router else { throw StepError.noRouter }
     
-    PresentebleSettings.forceWithoutAnimation = true
-    let nextContainer = DispatchQueue.main.sync { routing(router) }
-    PresentebleSettings.forceWithoutAnimation = false
+    let group = DispatchGroup()
+    group.enter()
+    
+    let nextContainer: NextStepType.RoutableContainerType = DispatchQueue.main.sync {
+      CATransaction.begin()
+      defer { CATransaction.commit() }
+      
+      CATransaction.setDisableActions(true)
+      CATransaction.setCompletionBlock { group.leave() }
+      return routing(router)
+    }
+    
+    group.wait()
     
     return NextStepType(container: nextContainer)
   }
