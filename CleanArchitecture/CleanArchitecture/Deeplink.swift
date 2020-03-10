@@ -35,48 +35,27 @@ extension Deeplink {
 
 public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol {
   private let container: RoutableContainerType
-//  private let step: Step<RoutableContainerType, Self>
+  private let underlyingStep: Step<RoutableContainerType, Self>
   
   public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> Void
   
   public init(container: RoutableContainerType) {
     self.container = container
-//    self.step = Step<RoutableContainerType, Self>(container: container)
+    self.underlyingStep = Step<RoutableContainerType, Self>(container: container)
   }
   
   public func step(routing: RoutingClosure) throws {
-    guard let router = container.router else { throw StepError.noRouter }
-    
-    let group = DispatchGroup()
-    group.enter()
-    
-    DispatchQueue.main.sync {
-      CATransaction.begin()
-      defer { CATransaction.commit() }
-      
-      CATransaction.setDisableActions(true)
-      CATransaction.setCompletionBlock { group.leave() }
+    try _ = underlyingStep.step { router in
       routing(router)
+      return container
     }
-    
-    group.wait()
   }
   
   public func animatedStep(routing: RoutingClosure) throws {
-    guard let router = container.router else { throw StepError.noRouter }
-    
-    let group = DispatchGroup()
-    group.enter()
-    
-    DispatchQueue.main.sync {
-      CATransaction.begin()
-      defer { CATransaction.commit() }
-      
-      CATransaction.setCompletionBlock { group.leave() }
+    try _ = underlyingStep.animatedStep { router in
       routing(router)
+      return container
     }
-    
-    group.wait()
   }
 }
 
