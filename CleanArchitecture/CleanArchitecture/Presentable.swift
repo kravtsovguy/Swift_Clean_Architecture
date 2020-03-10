@@ -13,30 +13,37 @@ enum PresentebleSettings {
   static var forceWithoutAnimation: Bool = false
 }
 
+extension PresentebleSettings {
+  fileprivate static func shouldAnimate(animated: Bool) -> Bool {
+    animated ? !PresentebleSettings.forceWithoutAnimation : false
+  }
+}
+
 public protocol Presentable: AnyObject {}
 
 extension Presentable where Self: UIViewController {
   public func present(presentable: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
-    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
+    let animated = PresentebleSettings.shouldAnimate(animated: animated)
     present(presentable, animated: animated, completion: completion)
   }
   
   public func push(presentable: UIViewController, animated: Bool) {
-    let navigationController = (self as? UINavigationController) ?? self.navigationController
-    
-    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
-    navigationController?.pushViewController(presentable, animated: animated)
+    let animated = PresentebleSettings.shouldAnimate(animated: animated)
+    nc?.pushViewController(presentable, animated: animated)
   }
   
   public func dismissPresentable(animated: Bool, completion: (() -> Void)? = nil) {
-    let nc: UINavigationController? = (self as? UINavigationController) ?? navigationController
+    let animated = PresentebleSettings.shouldAnimate(animated: animated)
+    let isPopped = nc?.popViewController(animated: animated) != nil
     
-    let animated = animated ? !PresentebleSettings.forceWithoutAnimation : false
-    let popVC = nc?.popViewController(animated: animated)
-    if popVC == nil {
-      dismiss(animated: true, completion: completion)
-    } else {
+    if isPopped {
       completion?()
+    } else {
+      dismiss(animated: animated, completion: completion)
     }
+  }
+  
+  private var nc: UINavigationController? {
+    self as? UINavigationController ?? navigationController
   }
 }
