@@ -9,7 +9,7 @@
 import CleanArchitecture
 
 protocol SolidRouterProtocol: Router, Routable {
-  var context: SolidViewController! { get }
+  var presentable: SolidViewController! { get }
   
   func routeToSolid(title: String)
 }

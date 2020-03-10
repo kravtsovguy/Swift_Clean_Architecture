@@ -17,7 +17,7 @@ final class MainAssembly: Assembly, RoutableContainer {
     let presenter = MainPresenter()
     let interactor = MainInteractor()
     
-    router.context = viewController
+    router.presentable = viewController
     presenter.view = viewController
     interactor.router = router
     interactor.presenter = presenter

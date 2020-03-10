@@ -9,18 +9,18 @@
 import CleanArchitecture
 
 final class MainRouter: MainRouterProtocol {
-  weak var context: MainViewController!
+  weak var presentable: MainViewController!
   
   let detailsAssembly = DetailsAssembly()
   let solidAssembly = SolidAssembly()
   
   func routeToDetails(callbacks: DetailsCallbacks?) {
     let presentable = detailsAssembly.assemble(callbacks: callbacks)
-    context.present(presentable: presentable, animated: true)
+    self.presentable.present(presentable: presentable, animated: true)
   }
   
   func routeToSolid() {
-    let pr = solidAssembly.assemble(title: "Solid")
-    context.push(presentable: pr, animated: true)
+    let presentable = solidAssembly.assemble(title: "Solid")
+    self.presentable.push(presentable: presentable, animated: true)
   }
 }

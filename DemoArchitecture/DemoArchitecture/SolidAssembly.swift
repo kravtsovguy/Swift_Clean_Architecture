@@ -18,7 +18,7 @@ final class SolidAssembly: Assembly, RoutableContainer {
     
     interactor.router = router
     interactor.view = viewController
-    router.context  = viewController
+    router.presentable  = viewController
     viewController.interactor = interactor
     
     interactor.activate()

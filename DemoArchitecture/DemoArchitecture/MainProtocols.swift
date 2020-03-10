@@ -9,7 +9,7 @@
 import CleanArchitecture
 
 protocol MainRouterProtocol: Router, Routable {
-  var context: MainViewController! { get }
+  var presentable: MainViewController! { get }
   
   func routeToDetails(callbacks: DetailsCallbacks?)
   func routeToSolid()
