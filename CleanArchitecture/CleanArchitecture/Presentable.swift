@@ -24,6 +24,10 @@ extension Presentable where Self: UIViewController {
     show(presentable, sender: self)
   }
   
+  public func showDetail(presentable: UIViewController) {
+    showDetailViewController(presentable, sender: self)
+  }
+  
   public func dismissPresentable(animated: Bool, completion: (() -> Void)? = nil) {
     let isPopped = nc?.popViewController(animated: animated) != nil
     

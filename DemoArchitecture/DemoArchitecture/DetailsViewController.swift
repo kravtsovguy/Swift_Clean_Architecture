@@ -9,12 +9,13 @@
 import UIKit
 import CleanArchitecture
 
-protocol DetailsView: View, Dismissable {
+protocol DetailsView: View {
   var callbacks: DetailsCallbacks? { get set }
 }
 
 final class DetailsViewController: UIViewController, DetailsView {
   var callbacks: DetailsCallbacks?
+  var onDismiss: (() -> Void)?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,14 +41,12 @@ final class DetailsViewController: UIViewController, DetailsView {
   }
   
   @objc private func acceptAction() {
-    onDismiss?(self) {
-      self.callbacks?.onAccept()
-    }
+    callbacks?.onAccept()
+    onDismiss?()
   }
   
   @objc private func declineAction() {
-    onDismiss?(self) {
-      self.callbacks?.onDecline()
-    }
+    callbacks?.onDecline()
+    onDismiss?()
   }
 }

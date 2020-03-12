@@ -14,9 +14,10 @@ struct DetailsCallbacks {
 }
 
 final class DetailsAssembly: Assembly {
-  func assemble(callbacks: DetailsCallbacks?) -> DetailsViewController {
+  func assemble(callbacks: DetailsCallbacks?, onDismiss: @escaping () -> Void) -> DetailsViewController {
     let viewController = DetailsViewController()
     viewController.callbacks = callbacks
+    viewController.onDismiss = onDismiss
     
     return viewController
   }
