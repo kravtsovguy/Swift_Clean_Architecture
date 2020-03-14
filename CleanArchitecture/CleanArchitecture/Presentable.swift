@@ -42,3 +42,11 @@ extension Presentable where Self: UIViewController {
     self as? UINavigationController ?? navigationController
   }
 }
+
+public typealias PresentableViewController = (Presentable & UIViewController)
+
+public protocol PresentableContainer: AnyObject {
+  associatedtype PresentableType: PresentableViewController
+  
+  var presentable: PresentableType! { get }
+}

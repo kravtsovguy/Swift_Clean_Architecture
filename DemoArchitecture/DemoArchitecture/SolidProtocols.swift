@@ -8,10 +8,8 @@
 
 import CleanArchitecture
 
-protocol SolidRouterProtocol: Router, Routable {
+protocol SolidRouterProtocol: Router, Routable, SolidRouting {
   var presentable: SolidViewController! { get }
-  
-  func routeToSolid(title: String)
 }
 
 protocol SolidInteractorProtocol: Interactor {

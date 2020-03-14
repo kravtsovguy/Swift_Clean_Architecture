@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15794D2413AD5C0043DAFB /* NameService.swift */; };
+		9C7052D6241D781A00017D88 /* DetailsRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D5241D781A00017D88 /* DetailsRouting.swift */; };
+		9C7052D8241D78FB00017D88 /* SolidRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D7241D78FB00017D88 /* SolidRouting.swift */; };
 		9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9D96240D1DEA0087315A /* AppDelegate.swift */; };
 		9CED9DA0240D1DEC0087315A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CED9D9F240D1DEC0087315A /* Assets.xcassets */; };
 		9CED9DA3240D1DEC0087315A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CED9DA1240D1DEC0087315A /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		9C15794D2413AD5C0043DAFB /* NameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameService.swift; sourceTree = "<group>"; };
+		9C7052D5241D781A00017D88 /* DetailsRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouting.swift; sourceTree = "<group>"; };
+		9C7052D7241D78FB00017D88 /* SolidRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidRouting.swift; sourceTree = "<group>"; };
 		9CED9D93240D1DEA0087315A /* DemoArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED9D96240D1DEA0087315A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CED9D9F240D1DEC0087315A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		9C7052D4241D778E00017D88 /* Routings */ = {
+			isa = PBXGroup;
+			children = (
+				9C7052D5241D781A00017D88 /* DetailsRouting.swift */,
+				9C7052D7241D78FB00017D88 /* SolidRouting.swift */,
+			);
+			name = Routings;
+			sourceTree = "<group>";
+		};
 		9CED9D8A240D1DEA0087315A = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		9CED9D95240D1DEA0087315A /* DemoArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				9C7052D4241D778E00017D88 /* Routings */,
 				9C15794C2413AD140043DAFB /* Services */,
 				9CED9DF7240F10250087315A /* Deeplinks */,
 				9CED9DAA240D1DF40087315A /* Main */,
@@ -267,8 +281,10 @@
 				9CED9DB4240D21910087315A /* MainRouter.swift in Sources */,
 				9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */,
 				9CED9DE0240DA81F0087315A /* TextFieldView.swift in Sources */,
+				9C7052D8241D78FB00017D88 /* SolidRouting.swift in Sources */,
 				9CED9DCD240D46110087315A /* DetailsAssembly.swift in Sources */,
 				9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */,
+				9C7052D6241D781A00017D88 /* DetailsRouting.swift in Sources */,
 				9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */,
 				9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */,
 				9CED9DB6240D22500087315A /* MainPresenter.swift in Sources */,

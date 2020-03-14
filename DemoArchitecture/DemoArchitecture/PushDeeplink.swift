@@ -20,7 +20,7 @@ struct PushDeeplink: Deeplink {
       sleep(1)
     }
     .animatedStep { router in
-      router.routeToSolid()
+      router.routeToSolid(title: "Solid")
       
       return router.solidAssembly
     }

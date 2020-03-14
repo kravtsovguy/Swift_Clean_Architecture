@@ -8,11 +8,8 @@
 
 import CleanArchitecture
 
-protocol MainRouterProtocol: Router, Routable {
+protocol MainRouterProtocol: Router, Routable, DetailsRouting, SolidRouting {
   var presentable: MainViewController! { get }
-  
-  func routeToDetails(callbacks: DetailsCallbacks?)
-  func routeToSolid()
 }
 
 protocol MainInteractorProtocol: Interactor {

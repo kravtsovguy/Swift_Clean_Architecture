@@ -23,7 +23,7 @@ final class MainInteractor: MainInteractorProtocol {
   }
   
   func testButtonTapped() {
-    router.routeToSolid()
+    router.routeToSolid(title: "Solid")
     print(nameService.name(firstname: "A", surname: "B"))
   }
 }

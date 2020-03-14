@@ -8,13 +8,6 @@
 
 import CleanArchitecture
 
-final class SolidRouter: SolidRouterProtocol {
+final class SolidRouter: SolidRouterProtocol, PresentableContainer {
   weak var presentable: SolidViewController!
-  
-  let solidAssembly = SolidAssembly()
-  
-  func routeToSolid(title: String) {
-    let pr = solidAssembly.assemble(title: title)
-    presentable.push(presentable: pr, animated: true)
-  }
 }
