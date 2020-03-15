@@ -7,5 +7,12 @@
 //
 
 public protocol Router: AnyObject {
-//  var presentable: Presentable! { get }
+  var presentable: PresentableViewController! { get }
+}
+
+/// Контейнер для хранения роутера
+public protocol RouterContainer: AnyObject {
+  associatedtype RouterType: Router
+  
+  var router: RouterType? { get }
 }

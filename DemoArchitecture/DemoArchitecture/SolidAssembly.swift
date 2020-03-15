@@ -8,7 +8,7 @@
 
 import CleanArchitecture
 
-final class SolidAssembly: Assembly, RoutableContainer {
+final class SolidAssembly: Assembly, RouterContainer {
   private(set) weak var router: SolidRouter?
 
   func assemble(title: String) -> SolidViewController {

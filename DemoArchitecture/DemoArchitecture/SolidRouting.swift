@@ -16,7 +16,7 @@ protocol SolidRouting: AnyObject {
   func routeToSolid(title: String)
 }
 
-extension SolidRouting where Self: PresentableContainer {
+extension SolidRouting where Self: Router {
   var solidAssembly: SolidAssembly { assembly }
   
   func routeToSolid(title: String) {

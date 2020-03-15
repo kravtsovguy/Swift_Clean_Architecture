@@ -12,7 +12,7 @@ private let deeplinkQueue = DispatchQueue(label: "DeeplinkDispatchQueue",
                                           qos: .userInitiated)
 
 public protocol StepProtocol {
-  associatedtype RoutableContainerType: RoutableContainer
+  associatedtype RoutableContainerType: RouterContainer
   init(container: RoutableContainerType)
 }
 
@@ -33,11 +33,11 @@ extension Deeplink {
   }
 }
 
-public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol {
+public struct SingleStep<RoutableContainerType: RouterContainer>: StepProtocol {
   private let container: RoutableContainerType
   private let underlyingStep: Step<RoutableContainerType, Self>
   
-  public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> Void
+  public typealias RoutingClosure = (_ router: RoutableContainerType.RouterType) -> Void
   
   public init(container: RoutableContainerType) {
     self.container = container
@@ -59,9 +59,9 @@ public struct SingleStep<RoutableContainerType: RoutableContainer>: StepProtocol
   }
 }
 
-public struct Step<RoutableContainerType: RoutableContainer, NextStepType: StepProtocol>: StepProtocol {
+public struct Step<RoutableContainerType: RouterContainer, NextStepType: StepProtocol>: StepProtocol {
   private let container: RoutableContainerType
-  public typealias RoutingClosure = (_ router: RoutableContainerType.RoutableType) -> NextStepType.RoutableContainerType
+  public typealias RoutingClosure = (_ router: RoutableContainerType.RouterType) -> NextStepType.RoutableContainerType
   
   public init(container: RoutableContainerType) {
     self.container = container

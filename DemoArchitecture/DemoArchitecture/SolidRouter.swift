@@ -8,6 +8,6 @@
 
 import CleanArchitecture
 
-final class SolidRouter: SolidRouterProtocol, PresentableContainer {
-  weak var presentable: SolidViewController!
+final class SolidRouter: SolidRouterProtocol {
+  weak var presentable: PresentableViewController!
 }

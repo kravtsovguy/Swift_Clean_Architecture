@@ -8,7 +8,7 @@
 
 import CleanArchitecture
 
-final class MainAssembly: Assembly, RoutableContainer {
+final class MainAssembly: Assembly, RouterContainer {
   private(set) weak var router: MainRouter?
   
   func assemble() -> MainViewController {

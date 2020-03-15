@@ -8,6 +8,6 @@
 
 import CleanArchitecture
 
-final class MainRouter: MainRouterProtocol, PresentableContainer {
-  weak var presentable: MainViewController!
+final class MainRouter: MainRouterProtocol {
+  weak var presentable: PresentableViewController!
 }

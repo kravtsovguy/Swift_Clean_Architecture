@@ -8,9 +8,7 @@
 
 import CleanArchitecture
 
-protocol SolidRouterProtocol: Router, Routable, SolidRouting {
-  var presentable: SolidViewController! { get }
-}
+protocol SolidRouterProtocol: Router, SolidRouting {}
 
 protocol SolidInteractorProtocol: Interactor {
   var router: SolidRouterProtocol! { get }

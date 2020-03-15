@@ -8,9 +8,7 @@
 
 import CleanArchitecture
 
-protocol MainRouterProtocol: Router, Routable, DetailsRouting, SolidRouting {
-  var presentable: MainViewController! { get }
-}
+protocol MainRouterProtocol: Router, DetailsRouting, SolidRouting {}
 
 protocol MainInteractorProtocol: Interactor {
   var router: MainRouterProtocol! { get }

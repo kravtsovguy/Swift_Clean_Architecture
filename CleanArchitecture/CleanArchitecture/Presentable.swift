@@ -10,6 +10,7 @@ import class UIKit.UIViewController
 import class UIKit.UINavigationController
 
 public protocol Presentable: AnyObject {}
+public typealias PresentableViewController = (Presentable & UIViewController)
 
 extension Presentable where Self: UIViewController {
   public func present(presentable: UIViewController, animated: Bool, completion: (() -> Void)? = nil) {
@@ -41,12 +42,4 @@ extension Presentable where Self: UIViewController {
   private var nc: UINavigationController? {
     self as? UINavigationController ?? navigationController
   }
-}
-
-public typealias PresentableViewController = (Presentable & UIViewController)
-
-public protocol PresentableContainer: AnyObject {
-  associatedtype PresentableType: PresentableViewController
-  
-  var presentable: PresentableType! { get }
 }

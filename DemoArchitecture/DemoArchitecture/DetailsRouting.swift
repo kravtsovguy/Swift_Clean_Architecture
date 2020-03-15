@@ -16,7 +16,7 @@ protocol DetailsRouting: AnyObject {
   func routeToDetails(callbacks: DetailsCallbacks?)
 }
 
-extension DetailsRouting where Self: PresentableContainer {
+extension DetailsRouting where Self: Router {
   var detailsAssembly: DetailsAssembly { assembly }
   
   func routeToDetails(callbacks: DetailsCallbacks?) {
