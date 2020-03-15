@@ -16,21 +16,9 @@ struct PushDeeplink: Deeplink {
   
   func start(combinedStep: CombinedStep) throws {
     try combinedStep
-    .step {
-      sleep(1)
-    }
-    .animatedStep { router in
-      router.routeToSolid(title: "Solid")
-      
-      return router.solidAssembly
-    }
-    .animatedStep { router in
-      router.routeToSolid(title: "1")
-      
-      return router.solidAssembly
-    }
-    .animatedStep { router in
-      router.routeToSolid(title: "2")
-    }
+    .step { sleep(1) }
+    .animatedStep { $0.routeToSolid(title: "Solid") }
+    .animatedStep { $0.routeToSolid(title: "1") }
+    .animatedStep { $0.routeToSolid(title: "2") }
   }
 }

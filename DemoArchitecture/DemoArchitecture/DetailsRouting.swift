@@ -11,18 +11,18 @@ import CleanArchitecture
 private let assembly = DetailsAssembly()
 
 protocol DetailsRouting: AnyObject {
-  var detailsAssembly: DetailsAssembly { get }
-  
-  func routeToDetails(callbacks: DetailsCallbacks?)
+  @discardableResult
+  func routeToDetails(callbacks: DetailsCallbacks?) -> DetailsAssembly
 }
 
 extension DetailsRouting where Self: Router {
-  var detailsAssembly: DetailsAssembly { assembly }
-  
-  func routeToDetails(callbacks: DetailsCallbacks?) {
-    let presentable = detailsAssembly.assemble(callbacks: callbacks) { [unowned self] in
+  @discardableResult
+  func routeToDetails(callbacks: DetailsCallbacks?) -> DetailsAssembly {
+    let presentable = assembly.assemble(callbacks: callbacks) { [unowned self] in
       self.presentable.dismissPresentable(animated: true)
     }
     self.presentable.present(presentable: presentable, animated: true)
+    
+    return assembly
   }
 }

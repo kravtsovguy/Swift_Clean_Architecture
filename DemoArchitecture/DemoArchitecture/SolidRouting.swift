@@ -11,16 +11,16 @@ import CleanArchitecture
 private let assembly = SolidAssembly()
 
 protocol SolidRouting: AnyObject {
-  var solidAssembly: SolidAssembly { get }
-  
-  func routeToSolid(title: String)
+  @discardableResult
+  func routeToSolid(title: String) -> SolidAssembly
 }
 
 extension SolidRouting where Self: Router {
-  var solidAssembly: SolidAssembly { assembly }
-  
-  func routeToSolid(title: String) {
-    let presentable = solidAssembly.assemble(title: title)
+  @discardableResult
+  func routeToSolid(title: String) -> SolidAssembly {
+    let presentable = assembly.assemble(title: title)
     self.presentable.push(presentable: presentable, animated: true)
+    
+    return assembly
   }
 }
