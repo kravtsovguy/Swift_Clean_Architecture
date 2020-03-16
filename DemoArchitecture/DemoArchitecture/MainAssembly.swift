@@ -23,6 +23,8 @@ final class MainAssembly: Assembly, RouterContainer {
     interactor.presenter = presenter
     viewController.interactor = interactor
     
+    interactor.activate()
+    
     self.router = router
     
     return viewController

@@ -13,8 +13,6 @@ protocol SolidRouterProtocol: Router, SolidRouting {}
 protocol SolidInteractorProtocol: Interactor {
   var router: SolidRouterProtocol! { get }
   var view: SolidViewProtocol! { get }
-  
-  func activate()
 }
 
 protocol SolidViewProtocol: View {

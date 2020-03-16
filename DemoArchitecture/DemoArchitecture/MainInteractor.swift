@@ -14,6 +14,8 @@ final class MainInteractor: MainInteractorProtocol {
   
   @Dependencies.Inject private var nameService: NameService
   
+  func activate() {}
+  
   func buttonTapped() {
     router.routeToDetails(callbacks: DetailsCallbacks(onAccept: {
       print("accept")

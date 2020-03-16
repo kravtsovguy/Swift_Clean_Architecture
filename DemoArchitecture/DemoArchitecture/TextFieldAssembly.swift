@@ -21,6 +21,8 @@ final class TextFieldAssembly: Assembly {
     interactor.callbacks = callbacks
     textField.interactor = interactor
     
+    interactor.activate()
+    
     return textField
   }
 }

@@ -9,4 +9,6 @@
 public protocol Interactor: AnyObject {
 //  var router: Router! { get }
 //  var presenter: Presenter! { get }
+  
+  func activate()
 }

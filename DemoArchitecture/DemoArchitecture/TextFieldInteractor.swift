@@ -12,6 +12,8 @@ final class TextFieldInteractor: TextFieldInteractorProtocol {
   weak var view: TextFieldViewProtocol!
   var callbacks: TextFieldCallbacks!
   
+  func activate() {}
+  
   func formatAndValidate(text: String) {
     let formattedText = format(text: text)
     view.set(text: formattedText)
