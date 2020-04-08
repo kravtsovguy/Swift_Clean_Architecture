@@ -6,9 +6,11 @@
 //  Copyright © 2020 Matvey Kravtsov. All rights reserved.
 //
 
+public protocol DependencyName: CustomStringConvertible {}
+
 public enum Dependencies {
   final public class Container {
-    private var dependencies: [String: Any] = [:]
+    private var dependencies: [String: [String: Any]] = [:]
     
     private let queue = DispatchQueue(label: "DIContainerDispatchQueue",
                                       qos: .userInitiated,
@@ -19,33 +21,42 @@ public enum Dependencies {
     private func key<DependencyType>(_ type: DependencyType.Type) -> String {
       String(describing: type)
     }
+    
+    private func name(_ name: DependencyName?) -> String {
+      name.map { String(describing: $0) } ?? "default"
+    }
   }
   
   @propertyWrapper
   public struct Inject<DependencyType> {
     public let wrappedValue: DependencyType
     
-    public init(container: Container) {
+    public init(container: Container, name: DependencyName?) {
       wrappedValue = container.resolve(DependencyType.self)
     }
     
-    public init() {
-      wrappedValue = Container.default.resolve(DependencyType.self)
+    public init(name: DependencyName? = nil) {
+      wrappedValue = Container.default.resolve(DependencyType.self, name: name)
     }
   }
 }
 
 extension Dependencies.Container {
   public func register<DependencyType>(_ type: DependencyType.Type,
+                                       name: DependencyName? = nil,
                                        dependency: @escaping (Dependencies.Container) -> DependencyType) {
     queue.async(flags: .barrier) {
-      self.dependencies[self.key(type)] = dependency(self)
+      if var nameDict = self.dependencies[self.key(type)] {
+        nameDict[self.name(name)] = dependency(self)
+      } else {
+        self.dependencies[self.key(type)] = [self.name(name): dependency(self)]
+      }
     }
   }
   
-  public func resolve<DependencyType>(_ type: DependencyType.Type) -> DependencyType {
+  public func resolve<DependencyType>(_ type: DependencyType.Type, name: DependencyName? = nil) -> DependencyType {
     queue.sync {
-      dependencies[key(type)] as! DependencyType
+      dependencies[self.key(type)]?[self.name(name)] as! DependencyType
     }
   }
 }

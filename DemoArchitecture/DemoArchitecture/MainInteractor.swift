@@ -12,7 +12,8 @@ final class MainInteractor: MainInteractorProtocol {
   var router: MainRouterProtocol!
   var presenter: MainPresenterProtocol!
   
-  @Dependencies.Inject private var nameService: NameService
+  @Dependencies.Inject(name: DependencyName.default)
+  private var nameService: NameService
   
   func activate() {}
   

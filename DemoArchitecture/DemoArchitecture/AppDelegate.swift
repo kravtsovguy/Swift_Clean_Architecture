@@ -9,6 +9,13 @@
 import UIKit
 import CleanArchitecture
 
+enum DependencyName: String, CleanArchitecture.DependencyName {
+  case `default`
+  case mock
+  
+  var description: String { rawValue }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
@@ -19,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-    Dependencies.Container.default.register(NameService.self) { _ in NameServiceImp() }
+    Dependencies.Container.default.register(NameService.self, name: DependencyName.default) { _ in NameServiceImp() }
     
     window = UIWindow()
     window?.rootViewController = UINavigationController(rootViewController: mainAssembly.assemble())
