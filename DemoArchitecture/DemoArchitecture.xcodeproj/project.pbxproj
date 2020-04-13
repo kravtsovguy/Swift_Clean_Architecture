@@ -32,23 +32,7 @@
 		9CED9DF6240EAFE20087315A /* SolidInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF5240EAFE20087315A /* SolidInteractor.swift */; };
 		9CED9DF9240F10380087315A /* PushDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DF8240F10380087315A /* PushDeeplink.swift */; };
 		9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DFA240F10950087315A /* ModalDeeplink.swift */; };
-		9CED9E43240FBFE00087315A /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */; };
-		9CED9E44240FBFE00087315A /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9CED9E45240FBFE00087315A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9CED9E44240FBFE00087315A /* CleanArchitecture.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9C15794D2413AD5C0043DAFB /* NameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameService.swift; sourceTree = "<group>"; };
@@ -86,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CED9E43240FBFE00087315A /* CleanArchitecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,13 +200,14 @@
 				9CED9D8F240D1DEA0087315A /* Sources */,
 				9CED9D90240D1DEA0087315A /* Frameworks */,
 				9CED9D91240D1DEA0087315A /* Resources */,
-				9CED9E45240FBFE00087315A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = DemoArchitecture;
+			packageProductDependencies = (
+			);
 			productName = DemoArchitecture;
 			productReference = 9CED9D93240D1DEA0087315A /* DemoArchitecture.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +236,8 @@
 				Base,
 			);
 			mainGroup = 9CED9D8A240D1DEA0087315A;
+			packageReferences = (
+			);
 			productRefGroup = 9CED9D94240D1DEA0087315A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
