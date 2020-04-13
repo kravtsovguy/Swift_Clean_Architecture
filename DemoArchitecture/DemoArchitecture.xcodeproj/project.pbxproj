@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15794D2413AD5C0043DAFB /* NameService.swift */; };
-		9C1D455A244487C400736386 /* CleanArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9C1D4559244487C400736386 /* CleanArchitecture */; };
+		9C1D456B24449F1600736386 /* CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1D456A24449F1600736386 /* CleanArchitecture.framework */; };
+		9C1D456C24449F1600736386 /* CleanArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1D456A24449F1600736386 /* CleanArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C7052D6241D781A00017D88 /* DetailsRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D5241D781A00017D88 /* DetailsRouting.swift */; };
 		9C7052D8241D78FB00017D88 /* SolidRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D7241D78FB00017D88 /* SolidRouting.swift */; };
 		9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9D96240D1DEA0087315A /* AppDelegate.swift */; };
@@ -35,8 +36,23 @@
 		9CED9DFB240F10950087315A /* ModalDeeplink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9DFA240F10950087315A /* ModalDeeplink.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9C1D456D24449F1700736386 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9C1D456C24449F1600736386 /* CleanArchitecture.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9C15794D2413AD5C0043DAFB /* NameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameService.swift; sourceTree = "<group>"; };
+		9C1D456A24449F1600736386 /* CleanArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CleanArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7052D5241D781A00017D88 /* DetailsRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouting.swift; sourceTree = "<group>"; };
 		9C7052D7241D78FB00017D88 /* SolidRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidRouting.swift; sourceTree = "<group>"; };
 		9CED9D93240D1DEA0087315A /* DemoArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C1D455A244487C400736386 /* CleanArchitecture in Frameworks */,
+				9C1D456B24449F1600736386 /* CleanArchitecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +203,7 @@
 		9CED9E27240FAE8D0087315A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C1D456A24449F1600736386 /* CleanArchitecture.framework */,
 				9CED9E3C240FBC2E0087315A /* CleanArchitecture.framework */,
 			);
 			name = Frameworks;
@@ -202,6 +219,7 @@
 				9CED9D8F240D1DEA0087315A /* Sources */,
 				9CED9D90240D1DEA0087315A /* Frameworks */,
 				9CED9D91240D1DEA0087315A /* Resources */,
+				9C1D456D24449F1700736386 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,7 +227,6 @@
 			);
 			name = DemoArchitecture;
 			packageProductDependencies = (
-				9C1D4559244487C400736386 /* CleanArchitecture */,
 			);
 			productName = DemoArchitecture;
 			productReference = 9CED9D93240D1DEA0087315A /* DemoArchitecture.app */;
@@ -240,7 +257,6 @@
 			);
 			mainGroup = 9CED9D8A240D1DEA0087315A;
 			packageReferences = (
-				9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */,
 			);
 			productRefGroup = 9CED9D94240D1DEA0087315A /* Products */;
 			projectDirPath = "";
@@ -480,25 +496,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = ../;
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9C1D4559244487C400736386 /* CleanArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */;
-			productName = CleanArchitecture;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CED9D8B240D1DEA0087315A /* Project object */;
 }
