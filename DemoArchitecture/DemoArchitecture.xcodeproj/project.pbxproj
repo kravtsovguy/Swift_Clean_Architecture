@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9C15794E2413AD5C0043DAFB /* NameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C15794D2413AD5C0043DAFB /* NameService.swift */; };
+		9C1D455A244487C400736386 /* CleanArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9C1D4559244487C400736386 /* CleanArchitecture */; };
 		9C7052D6241D781A00017D88 /* DetailsRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D5241D781A00017D88 /* DetailsRouting.swift */; };
 		9C7052D8241D78FB00017D88 /* SolidRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7052D7241D78FB00017D88 /* SolidRouting.swift */; };
 		9CED9D97240D1DEA0087315A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED9D96240D1DEA0087315A /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1D455A244487C400736386 /* CleanArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +209,7 @@
 			);
 			name = DemoArchitecture;
 			packageProductDependencies = (
+				9C1D4559244487C400736386 /* CleanArchitecture */,
 			);
 			productName = DemoArchitecture;
 			productReference = 9CED9D93240D1DEA0087315A /* DemoArchitecture.app */;
@@ -237,6 +240,7 @@
 			);
 			mainGroup = 9CED9D8A240D1DEA0087315A;
 			packageReferences = (
+				9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */,
 			);
 			productRefGroup = 9CED9D94240D1DEA0087315A /* Products */;
 			projectDirPath = "";
@@ -476,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = ../;
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C1D4559244487C400736386 /* CleanArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C1D4558244487C400736386 /* XCRemoteSwiftPackageReference "." */;
+			productName = CleanArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CED9D8B240D1DEA0087315A /* Project object */;
 }

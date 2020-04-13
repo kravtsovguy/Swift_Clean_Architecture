@@ -7,6 +7,7 @@
 //
 
 import CleanArchitecture
+import Foundation
 
 struct PushDeeplink: Deeplink {
   typealias CombinedStep = FlowStep<Step1>

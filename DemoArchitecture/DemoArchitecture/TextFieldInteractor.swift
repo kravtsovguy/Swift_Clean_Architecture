@@ -7,6 +7,7 @@
 //
 
 import CleanArchitecture
+import Foundation
 
 final class TextFieldInteractor: TextFieldInteractorProtocol {
   weak var view: TextFieldViewProtocol!
