@@ -33,12 +33,8 @@ public enum Dependencies {
   public struct Inject<DependencyType> {
     public let wrappedValue: DependencyType
     
-    public init(container: Container, name: DependencyName?) {
-      wrappedValue = container.resolve(DependencyType.self)
-    }
-    
-    public init(name: DependencyName? = nil) {
-      wrappedValue = Container.default.resolve(DependencyType.self, name: name)
+    public init(container: Container = .default, name: DependencyName? = nil) {
+      wrappedValue = container.resolve(DependencyType.self, name: name)
     }
   }
 }
